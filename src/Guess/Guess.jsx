@@ -12,12 +12,10 @@ class Guess extends React.Component {
 
   handleChange(event) {
     const character = event.target.value.toLowerCase();
-    console.log(event.target.value)
-    if (character.charCodeAt(0) === 127) {
-      console.log('delete')
-    }
     if (character.charCodeAt(0) >= 97 && character.charCodeAt(0) <= 122) {
       this.setState({value: character});
+    } else {
+      this.setState({value: ''});
     };
   }
 
@@ -25,6 +23,7 @@ class Guess extends React.Component {
     const { value } = this.state;
     if (value !== '') {
       console.log('A name was submitted: ' + this.state.value);
+      this.setState({value: ''});
     }
     event.preventDefault();
   }
