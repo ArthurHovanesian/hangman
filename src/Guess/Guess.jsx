@@ -1,5 +1,6 @@
 import React from 'react';
 import Key from '../Key/Key.jsx';
+import styles from './Guess.css';
 
 class Guess extends React.Component {
   constructor() {
@@ -14,13 +15,13 @@ class Guess extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className={styles.row}>
           {this.top.map((letter, index) => <Key letter={letter} index={index}/>)}
         </div>
-        <div>
+        <div className={styles.row}>
           {this.middle.map((letter, index) => <Key letter={letter} index={index}/>)}
         </div>
-        <div>
+        <div className={styles.row}>
           {this.bottom.map((letter, index) => <Key letter={letter} index={index}/>)}
         </div>
       </div>

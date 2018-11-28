@@ -1,0 +1,25 @@
+.key {
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 80px;
+  margin: 5px;
+  border: 1px solid white;
+}
+
+.notHovered {
+  background-color: black;
+  color: white;
+  transform: scale(1);
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.hovered {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+  transition: background-color .2s ease, transform .2s ease;
+}
