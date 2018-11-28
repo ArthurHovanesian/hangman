@@ -10,16 +10,16 @@ class Key extends React.Component {
       isHovered: false,
     }
   }
-
+  //don't use this.stae inside setstate
   handleHover(){
     this.setState({isHovered: !this.state.isHovered})
   }
 
   render() {
-    const { letter, index } = this.props;
+    const { letter, handleClick } = this.props;
     const keyClass = this.state.isHovered ? 'hovered' : 'notHovered';
     return (
-      <div className={`${styles[keyClass]} ${styles.key}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+      <div className={`${styles[keyClass]} ${styles.key}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={() => handleClick(letter)}>
         {letter}
       </div>
     )
