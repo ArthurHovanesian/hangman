@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Word from '../Word/Word.jsx';
+import Guess from '../Guess/Guess.jsx';
 
 class App extends React.Component {
   //is props necessary?
@@ -27,6 +28,7 @@ class App extends React.Component {
     const { word } = this.state;
     return (
       <div>
+        <Guess />
         <Word word={word}/>
       </div>
     )

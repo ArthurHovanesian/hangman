@@ -2,6 +2,7 @@ import React from 'react';
 import Letter from '../Letter/Letter.jsx';
 
 const Word = ({word}) => {
+  //auto-render ' and -
   return (
     <table>
       <tr>
