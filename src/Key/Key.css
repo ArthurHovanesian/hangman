@@ -23,3 +23,13 @@
   transform: scale(1.1);
   transition: background-color .2s ease, transform .2s ease;
 }
+
+.correct {
+  border-color: black;
+  color: green;
+}
+
+.incorrect {
+  border-color: black;
+  color: red;
+}
