@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Word from '../Word/Word.jsx';
 import Keyboard from '../Keyboard/Keyboard.jsx';
+import Lives from '../Lives/Lives.jsx';
 import styles from './App.css';
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
     this.state = {
       word: [],
       reveal: [],
+      attemptsLeft: 6,
       keys: {
         'Q': false,
         'W': false,
@@ -48,6 +50,13 @@ class App extends React.Component {
     this.getWord();
   }
 
+  componentDidUpdate() {
+    const { attemptsLeft } = this.state;
+    if (attemptsLeft === 0) {
+      alert('you lose')
+    }
+  }
+
   getWord() {
     //err handling
     //condense into one .then?
@@ -66,7 +75,7 @@ class App extends React.Component {
         const { word } = this.state;
         let keys = Object.assign({}, this.state.keys);
         word.forEach(letter => {
-          letter = letter.toUpperCase();
+          letter = letter;
           keys[letter] = true;
         })
         this.setState({keys: keys})
@@ -74,15 +83,23 @@ class App extends React.Component {
   }
 
   checkUserGuess(query) {
-    const { reveal } = this.state;
+    //there's a lot going on here
+    const { word, reveal, attemptsLeft } = this.state;
+    let numAttempts = attemptsLeft;
+    let isFound = word.filter(letter => letter === query);
+    isFound.length === 0 ? numAttempts -= 1 : null
     let check = reveal.map(entry => entry.letter === query ? ({letter: entry.letter, show: true}) : entry)
-    this.setState({reveal: check});
+    this.setState({
+      reveal: check,
+      attemptsLeft: numAttempts
+    });
   }
 
   render() {
-    const { reveal, keys } = this.state;
+    const { reveal, keys, attemptsLeft } = this.state;
     return (
-      <div className={styles.app}>
+      <div >
+        <Lives attemptsLeft={attemptsLeft} />
         <Word reveal={reveal}/>
         <Keyboard keys={keys} checkUserGuess={this.checkUserGuess} />
       </div>

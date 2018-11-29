@@ -1,0 +1,13 @@
+.scale {
+  transform: scale(.75);
+  position: absolute;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 1s ease
+}
+
+.container {
+  margin: 0 auto;
+}

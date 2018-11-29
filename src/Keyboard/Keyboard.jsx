@@ -19,15 +19,17 @@ class Keyboard extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className={styles.row}>
-          {this.renderRow(0, 9)}
-        </div>
-        <div className={styles.row}>
-          {this.renderRow(10, 18)}
-        </div>
-        <div className={styles.row}>
-          {this.renderRow(19, 26)}
+      <div className={styles.outer}>
+        <div className={styles.inner}>
+          <div className={styles.row}>
+            {this.renderRow(0, 9)}
+          </div>
+          <div className={styles.row}>
+            {this.renderRow(10, 18)}
+          </div>
+          <div className={styles.row}>
+            {this.renderRow(19, 26)}
+          </div>
         </div>
       </div>
     )

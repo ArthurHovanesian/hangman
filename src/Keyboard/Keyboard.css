@@ -1,3 +1,13 @@
+.outer {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+}
+
+.inner {
+  position: relative;
+}
+
 .row {
   display: table;
   margin: 0 auto;
