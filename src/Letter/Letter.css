@@ -1,0 +1,12 @@
+.letter {
+  display: inline-block;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 80px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  border-bottom: 1px solid white;
+}

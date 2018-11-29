@@ -1,14 +1,13 @@
 import React from 'react';
 import Letter from '../Letter/Letter.jsx';
+import styles from './Word.css';
 
-const Word = ({word}) => {
+const Word = ({ reveal }) => {
   //auto-render ' and -
   return (
-    <table>
-      <tr>
-        {word.map((letter, index) => <Letter letter={letter} index={index}/>)}
-      </tr>
-    </table>
+    <div className={styles.word}>
+      {reveal.map((letter, index) => <Letter letter={letter} index={index}/>)}
+    </div>
   )
 }
 

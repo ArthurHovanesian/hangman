@@ -11,10 +11,10 @@ class Keyboard extends React.Component {
   }
 
   renderRow(start, end) {
-    const { keys, handleClick } = this.props;
+    const { keys, checkUserGuess } = this.props;
     return Object.keys(keys)
                  .filter((key, index) => index >= start && index <= end)
-                 .map(key => <Key letter={key} inWord={keys[key]} handleClick={handleClick}/>)
+                 .map(key => <Key letter={key} inWord={keys[key]} checkUserGuess={checkUserGuess}/>)
   }
 
   render() {

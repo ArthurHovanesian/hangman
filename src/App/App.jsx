@@ -9,9 +9,10 @@ class App extends React.Component {
   constructor() {
     super();
     //spinner for loading word
-    this.handleClick = this.handleClick.bind(this);
+    this.checkUserGuess = this.checkUserGuess.bind(this);
     this.state = {
       word: [],
+      reveal: [],
       keys: {
         'Q': false,
         'W': false,
@@ -49,12 +50,21 @@ class App extends React.Component {
 
   getWord() {
     //err handling
+    //condense into one .then?
+    //this is very messy
     axios.get('/api/choose_word')
-      .then(res => this.setState({word: res.data.split('')}))
+      .then(res => {
+        let word = res.data.split('');
+        let reveal = word.map(letter => ({letter: letter, show: false}));
+        this.setState({
+          word: word,
+          reveal: reveal
+        });
+      })
       .catch(err => console.log(err))
       .then(() => {
-        const word = this.state.word;
-        let keys = Object.assign({}, this.state.keys)
+        const { word } = this.state;
+        let keys = Object.assign({}, this.state.keys);
         word.forEach(letter => {
           letter = letter.toUpperCase();
           keys[letter] = true;
@@ -63,26 +73,16 @@ class App extends React.Component {
       })
   }
 
-  handleClick(query) {
-    this.state.word.forEach(letter => {
-      if (letter.toUpperCase() === query) {
-        const correctGuess = this.state.correctGuess.slice();
-        correctGuess.push(query);
-        this.setState({correctGuess: correctGuess});
-      } else {
-        const incorrectGuess = this.state.incorrectGuess.slice();
-        incorrectGuess.push(query);
-        this.setState({correctGuess: incorrectGuess});
-      }
-    })
+  checkUserGuess(query) {
+    console.log(query)
   }
 
   render() {
-    const { word, keys } = this.state;
+    const { reveal, keys } = this.state;
     return (
       <div className={styles.app}>
-        <Keyboard keys={keys} handleClick={this.handleClick} />
-        <Word word={word}/>
+        <Word reveal={reveal}/>
+        <Keyboard keys={keys} checkUserGuess={this.checkUserGuess} />
       </div>
     )
   };
