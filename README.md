@@ -31,3 +31,5 @@ Journal
 4. Create new state variable that holds each letter of word in object along with a boolean to show or hide it. Did this because I wanted to to easily be able to conditionally reveal the letter on click. Downside is the messiness. Might want to go back and figure out a cleaner way to write this object.
 
 5.checkUserGuess function might have too much going on / is not very optimized
+
+6. BUG: User shouldn't be able to select letters before word is loaded in. Should not load component until after word is there.
