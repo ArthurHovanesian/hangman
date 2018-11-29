@@ -10,6 +10,12 @@ class Keyboard extends React.Component {
     }
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if (preProps.notYetFound !== this.props.notYetFound) {
+  //
+  //   }
+  // }
+
   renderRow(start, end) {
     const { keys, checkUserGuess } = this.props;
     return Object.keys(keys)

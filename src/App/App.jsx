@@ -13,6 +13,8 @@ class App extends React.Component {
     this.checkUserGuess = this.checkUserGuess.bind(this);
     this.state = {
       word: [],
+      notYetFound: -1,
+      score: 0,
       reveal: [],
       attemptsLeft: 6,
       keys: {
@@ -50,10 +52,17 @@ class App extends React.Component {
     this.getWord();
   }
 
-  componentDidUpdate() {
-    const { attemptsLeft } = this.state;
+  componentDidUpdate(prevProps) {
+    const { attemptsLeft, notYetFound, score } = this.state;
     if (attemptsLeft === 0) {
       alert('you lose')
+    }
+    if (notYetFound === 0) {
+      this.getWord();
+      this.setState({
+        score: score + 1,
+        notYetFound: -1
+      })
     }
   }
 
@@ -67,6 +76,7 @@ class App extends React.Component {
         let reveal = word.map(letter => ({letter: letter, show: false}));
         this.setState({
           word: word,
+          notYetFound: word.length,
           reveal: reveal
         });
       })
@@ -84,24 +94,26 @@ class App extends React.Component {
 
   checkUserGuess(query) {
     //there's a lot going on here
-    const { word, reveal, attemptsLeft } = this.state;
+    const { word, reveal, attemptsLeft, notYetFound } = this.state;
     let numAttempts = attemptsLeft;
-    let isFound = word.filter(letter => letter === query);
-    isFound.length === 0 ? numAttempts -= 1 : null
+    let lettersFound = word.filter(letter => letter === query);
+    lettersFound.length === 0 ? numAttempts -= 1 : null;
     let check = reveal.map(entry => entry.letter === query ? ({letter: entry.letter, show: true}) : entry)
     this.setState({
+      notYetFound: notYetFound - lettersFound.length,
       reveal: check,
       attemptsLeft: numAttempts
     });
   }
 
   render() {
-    const { reveal, keys, attemptsLeft } = this.state;
+    const { reveal, keys, attemptsLeft, notYetFound, score } = this.state;
+    console.log(this.state.word, this.state.notYetFound)
     return (
       <div >
         <Lives attemptsLeft={attemptsLeft} />
         <Word reveal={reveal}/>
-        <Keyboard keys={keys} checkUserGuess={this.checkUserGuess} />
+        <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} />
       </div>
     )
   };
