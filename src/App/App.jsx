@@ -3,6 +3,7 @@ import axios from 'axios';
 import Word from '../Word/Word.jsx';
 import Keyboard from '../Keyboard/Keyboard.jsx';
 import Lives from '../Lives/Lives.jsx';
+import CurrentScore from '../CurrentScore/CurrentScore.jsx';
 import styles from './App.css';
 
 class App extends React.Component {
@@ -61,7 +62,8 @@ class App extends React.Component {
       this.getWord();
       this.setState({
         score: score + 1,
-        notYetFound: -1
+        notYetFound: -1,
+        attemptsLeft: 6,
       })
     }
   }
@@ -113,6 +115,7 @@ class App extends React.Component {
       return (
         <div >
           <Lives attemptsLeft={attemptsLeft} />
+          <CurrentScore score={score} />
           <Word reveal={reveal}/>
           <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} />
         </div>
