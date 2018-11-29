@@ -59,6 +59,13 @@ class Lives extends React.Component {
           </svg>
         </div>
       )
+    } else if (attemptsLeft === 0) {
+      return (
+        <div className={styles.container}>
+          <svg height="300" className={styles.scale}>
+          </svg>
+        </div>
+      )
     }
   }
 }
