@@ -1,13 +1,12 @@
 .scale {
-  transform: scale(.75);
-  position: absolute;
+  transform: scale(.6);
 }
 
 .fade {
-  opacity: 0;
-  transition: opacity 1s ease
+
 }
 
 .container {
+  display: table;
   margin: 0 auto;
 }
