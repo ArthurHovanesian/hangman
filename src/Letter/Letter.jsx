@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Letter.css';
 
-const Letter = ({ letter, show }) => {
+const Letter = ({ entry }) => {
   //is a table best option for word too long to fit screne?
   return (
     <div className={styles.letter}>
-      {letter.letter.toUpperCase()}
+      {entry.show ? entry.letter : ''}
     </div>
   )
 }

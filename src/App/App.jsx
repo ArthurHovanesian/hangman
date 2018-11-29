@@ -54,7 +54,7 @@ class App extends React.Component {
     //this is very messy
     axios.get('/api/choose_word')
       .then(res => {
-        let word = res.data.split('');
+        let word = res.data.toUpperCase().split('');
         let reveal = word.map(letter => ({letter: letter, show: false}));
         this.setState({
           word: word,
@@ -74,7 +74,9 @@ class App extends React.Component {
   }
 
   checkUserGuess(query) {
-    console.log(query)
+    const { reveal } = this.state;
+    let check = reveal.map(entry => entry.letter === query ? ({letter: entry.letter, show: true}) : entry)
+    this.setState({reveal: check});
   }
 
   render() {

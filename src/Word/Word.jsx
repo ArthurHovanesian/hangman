@@ -6,7 +6,7 @@ const Word = ({ reveal }) => {
   //auto-render ' and -
   return (
     <div className={styles.word}>
-      {reveal.map((letter, index) => <Letter letter={letter} index={index}/>)}
+      {reveal.map((entry, index) => <Letter entry={entry} index={index}/>)}
     </div>
   )
 }
