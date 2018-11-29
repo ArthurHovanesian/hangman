@@ -107,15 +107,21 @@ class App extends React.Component {
   }
 
   render() {
-    const { reveal, keys, attemptsLeft, notYetFound, score } = this.state;
+    const { word, reveal, keys, attemptsLeft, notYetFound, score } = this.state;
     console.log(this.state.word, this.state.notYetFound)
-    return (
-      <div >
-        <Lives attemptsLeft={attemptsLeft} />
-        <Word reveal={reveal}/>
-        <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} />
-      </div>
-    )
+    if (notYetFound > 0) {
+      return (
+        <div >
+          <Lives attemptsLeft={attemptsLeft} />
+          <Word reveal={reveal}/>
+          <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} />
+        </div>
+      )
+    } else {
+      return (
+        <h1>Thinking...</h1>
+      )
+    }
   };
 };
 

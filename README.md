@@ -33,3 +33,10 @@ Journal
 5.checkUserGuess function might have too much going on / is not very optimized
 
 6. BUG: User shouldn't be able to select letters before word is loaded in. Should not load component until after word is there.
+
+7. BUG: life indicator and word get pushed down into keyboard when not in full screen. Doesn't look good in other window size in general
+
+8. To restart keyboard/lives after correctly guessing word?
+  -use "key" to track score and reset after score change
+  -BUG: continuous refresh causing crash. Fix by setState on netyetfound variable to prevent constant updating
+  -BUG: on new keyboard, key mouse is currently on gets stuck in hover state when not hovered and switches to unhovered state when it is hovered. only happens to first key. Fixed by conditional render on App based on number of letters to be found. Not the best fix, though.
