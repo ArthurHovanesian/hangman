@@ -26,10 +26,12 @@
 
 .correct {
   border-color: black;
-  color: green;
+  color: #c3ffba;
+  text-shadow: 0px 0px 10px #39FF14;
 }
 
 .incorrect {
   border-color: black;
-  color: red;
+  color: #ffa8a8;
+  text-shadow: 0px 0px 10px red;
 }
