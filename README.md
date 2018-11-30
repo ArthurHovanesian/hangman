@@ -1,16 +1,14 @@
 # hangman
 
 TODO
-1. Move keyboard to bottom of screen
 2. Add logic for what happens when user clicks on a key
   -Checks against given word and turns red if not there, green if is there
   -Displays all instances of correct letter on click
-3. Move word above keyboard
-4. Initialize word with blank underscores
 5. Limit guess to 6
   -something happens on losing
   -something happens on winning
-6. Flash red every second when attemptsLeft is 1
+7. Send name and difficult level data to App from homepage
+8. Make API call based on difficulty level
 
 Journal
 1. Why not redux?
@@ -54,3 +52,6 @@ Journal
 14. Idea: go full out with neon theme and change text to look like neon sign text, soften edges, and replace hexagon with word 'password' in neon colors that one by one dim upon a wrong guess
 
 15. BUG: second round keys still glow green even if they should be red
+
+16. How to pass props through recat router <Link> tag?
+  -First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now? 

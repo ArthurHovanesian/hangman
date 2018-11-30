@@ -51,6 +51,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    this.getNameAndDifficulty();
     this.getWord();
   }
 
@@ -67,6 +68,13 @@ class App extends React.Component {
         attemptsLeft: 6,
       })
     }
+  }
+
+  getNameAndDifficulty() {
+    const path = window.location.pathname.split('/');
+    const name = path[2];
+    const difficulty = path[3];
+    console.log(name, difficulty);
   }
 
   getWord() {
@@ -111,7 +119,6 @@ class App extends React.Component {
 
   render() {
     const { word, reveal, keys, attemptsLeft, notYetFound, score } = this.state;
-    console.log(this.state.word, this.state.notYetFound)
     if (notYetFound > 0) {
       return (
         <div >

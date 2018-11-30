@@ -10,7 +10,6 @@ class Button extends React.Component {
     this.borderColors = ['#39FF14', 'yellow', 'red'];
     this.state = {
       isHovered: false,
-      isClicked: false,
     }
   }
 
