@@ -99,12 +99,12 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.word)
-    const { word, reveal, keys, attemptsLeft, notYetFound, score } = this.state;
+    const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty } = this.state;
     if (notYetFound > 0) {
       return (
         <div >
           <Lives attemptsLeft={attemptsLeft} />
-          <CurrentScore score={score} />
+          <CurrentScore score={score} name={name} difficulty={difficulty}/>
           <Word reveal={reveal}/>
           <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} attemptsLeft={attemptsLeft}/>
         </div>

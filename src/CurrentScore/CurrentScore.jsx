@@ -1,9 +1,19 @@
 import React from 'react';
 import styles from './CurrentScore.css';
 
-const CurrentScore = ({ score }) => {
+const CurrentScore = ({ score, name, difficulty }) => {
   return (
-    <h1 className={styles.currentscore}>{score}</h1>
+    <div className={styles.currentscore}>
+      <div>
+        {name}
+      </div>
+      <div>
+        {difficulty}
+      </div>
+      <div>
+        {score}
+      </div>
+    </div>
   )
 }
 
