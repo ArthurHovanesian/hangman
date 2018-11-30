@@ -23,7 +23,7 @@ class Lives extends React.Component {
       return (
         <div className={styles.container}>
           <svg height="300" className={styles.scale}>
-            <polyline points="300,150 225,280 75,280 0,150 75,20 225,280 75,280 225,20 300,150 0,150" stroke="blue" stroke-width="2" fill-rule="nonzero"/>
+            <polyline points="300,150 225,280 75,280 0,150 75,20 225,280 75,280 225,20 300,150 0,150" stroke="#00FFFF" stroke-width="2" fill-rule="nonzero"/>
           </svg>
         </div>
       )
@@ -31,7 +31,7 @@ class Lives extends React.Component {
       return (
         <div className={styles.container}>
           <svg height="300" className={styles.scale}>
-            <polyline points="150,150 300,150 225,280 150,150 75,280 225,280 150,150 0,150 75,280 150,150 75,20 0,150" stroke="green" stroke-width="2" fill-rule="nonzero"/>
+            <polyline points="150,150 300,150 225,280 150,150 75,280 225,280 150,150 0,150 75,280 150,150 75,20 0,150" stroke="#39FF14" stroke-width="2" fill-rule="nonzero"/>
           </svg>
         </div>
       )
@@ -47,7 +47,7 @@ class Lives extends React.Component {
       return (
         <div className={styles.container}>
           <svg height="300" className={styles.scale}>
-            <polyline points="75,280 0,150 75,20 150,150 75,280 0,150 150,150" stroke="orange" stroke-width="2" fill-rule="nonzero"/>
+            <polyline points="75,280 0,150 75,20 150,150 75,280 0,150 150,150" stroke="#ff4500" stroke-width="2" fill-rule="nonzero"/>
           </svg>
         </div>
       )

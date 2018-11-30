@@ -8,6 +8,7 @@ class Key extends React.Component {
     this.handleHover = this.handleHover.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.checkUserGuess = this.checkUserGuess.bind(this);
+    this.colors = ['red','#ff4500','yellow','#39FF14','#00FFFF','#ff0dbf']
     this.state = {
       isHovered: false,
       isClicked: false,
@@ -32,9 +33,8 @@ class Key extends React.Component {
   }
 
   render() {
-    const { letter, checkUserGuess } = this.props;
+    const { letter, checkUserGuess, attemptsLeft } = this.props;
     const { isHovered, isClicked } = this.state;
-    const hoverClass = isHovered ? 'hovered' : 'notHovered';
     const clickClass = isClicked ?  this.checkUserGuess() : '';
     if (isClicked) {
       return (
@@ -42,9 +42,15 @@ class Key extends React.Component {
           {letter}
         </div>
       )
+    } else if (isHovered) {
+      return (
+        <div className={`${styles.hovered} ${styles.key} ${styles[clickClass]}`} style={{backgroundColor: `${this.colors[attemptsLeft - 1]}`}}onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
+          {letter}
+        </div>
+      )
     } else {
       return (
-        <div className={`${styles[hoverClass]} ${styles.key} ${styles[clickClass]}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
+        <div className={`${styles.notHovered} ${styles.key} ${styles[clickClass]}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
           {letter}
         </div>
       )
