@@ -37,24 +37,6 @@
   background-color: black;
 }
 
-.easy {
-  border-color: #00FFFF;
-  color: #00FFFF;
-  background-color: black;
-}
-
-.medium {
-  border-color: blue;
-  color: blue;
-  background-color: black;
-}
-
-.hard {
-  border-color: purple;
-  color: purple;
-  background-color: black;
-}
-
 .hovered {
   cursor: pointer;
   transform: scale(1.15);

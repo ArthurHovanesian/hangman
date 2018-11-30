@@ -23,7 +23,7 @@ class Home extends React.Component {
         <DifficultyButton level={1}/>
         <DifficultyButton level={2}/>
         <Link to='/play'>
-          <button className={styles.start}>START</button>
+          <DifficultyButton level={3}/>
         </Link>
       </div>
     )

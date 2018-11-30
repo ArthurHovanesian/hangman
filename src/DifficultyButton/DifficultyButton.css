@@ -8,6 +8,17 @@
   background-color: black;
 }
 
+.start {
+  cursor: pointer;
+  width: 60%;
+  height: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: #ff0dbf;
+  border-color: #ff0dbf;
+  background-color: black;
+}
+
 .hovered {
   transform: scale(1.15);
   transition: transform .2s ease;
