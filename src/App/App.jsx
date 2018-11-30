@@ -61,7 +61,8 @@ class App extends React.Component {
     //err handling
     //condense into one .then?
     //this is very messy
-    axios.get('/api/choose_word')
+    const difficulty = this.getNameAndDifficulty()[1];
+    axios.get(`/api/choose_word/${difficulty}`, {difficulty: difficulty})
       .then(res => {
         let word = res.data.toUpperCase().split('');
         let reveal = word.map(letter => ({letter: letter, show: false}));
