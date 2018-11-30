@@ -7,18 +7,19 @@
   font-size: 80px;
   margin: 5px;
   border: 1px solid #D3D3D3;
+  border-radius: 5px;
 }
 
 .notHovered {
   background-color: black;
-  color: #D3D3D3;
+  color: #424242;
+  border-color: #424242;
   transform: scale(1);
-  transition: background-color .7s ease, transform .2s ease;
+  transition: color .7s ease, box-shadow .5s ease, text-shadow .7s ease, transform .2s ease;
 }
 
 .hovered {
   cursor: pointer;
-  color: black;
   transform: scale(1.15);
   transition: background-color .2s ease, transform .2s ease;
 }

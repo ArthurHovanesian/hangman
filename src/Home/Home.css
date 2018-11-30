@@ -17,6 +17,7 @@
 }
 
 .difficulty {
+  cursor: pointer;
   width: 19%;
   height: 50px;
   font-family: 'Roboto', sans-serif;
@@ -26,6 +27,7 @@
 }
 
 .start {
+  cursor: pointer;
   width: 60%;
   height: 50px;
   font-family: 'Roboto', sans-serif;
@@ -36,19 +38,19 @@
 }
 
 .easy {
-  border-color: #39FF14;
-  color: #39FF14;
+  border-color: #00FFFF;
+  color: #00FFFF;
   background-color: black;
 }
 
 .medium {
-  border-color: yellow;
-  color: yellow;
+  border-color: blue;
+  color: blue;
   background-color: black;
 }
 
 .hard {
-  border-color: red;
-  color: red;
+  border-color: purple;
+  color: purple;
   background-color: black;
 }
