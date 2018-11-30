@@ -1,0 +1,22 @@
+.difficulty {
+  cursor: pointer;
+  width: 19%;
+  height: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  margin: 0 1% 10% 1%;
+  background-color: black;
+}
+
+.hovered {
+  transform: scale(1.15);
+  transition: transform .2s ease;
+}
+
+.notHovered {
+  background-color: black;
+  color: #424242;
+  border-color: #424242;
+  transform: scale(1);
+  transition: color .7s ease, box-shadow .5s ease, text-shadow .7s ease, transform .2s ease;
+}

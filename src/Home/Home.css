@@ -54,3 +54,17 @@
   color: purple;
   background-color: black;
 }
+
+.hovered {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.notHovered {
+  background-color: black;
+  color: #424242;
+  border-color: #424242;
+  transform: scale(1);
+  transition: color .7s ease, box-shadow .5s ease, text-shadow .7s ease, transform .2s ease;
+}

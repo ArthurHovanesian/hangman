@@ -16,7 +16,7 @@ class Key extends React.Component {
     }
   }
   //don't use this.stae inside setstate
-  handleHover(){
+  handleHover() {
     this.setState({isHovered: !this.state.isHovered})
   }
 

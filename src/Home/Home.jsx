@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DifficultyButton from '../DifficultyButton/DifficultyButton.jsx';
 import styles from './Home.css';
 
 class Home extends React.Component {
@@ -7,20 +8,20 @@ class Home extends React.Component {
     super();
     this.state = {
       name:'',
-      difficulty: ''
+      difficulty: '',
     }
   }
+
+//make separare difficulty button component and pass in e,m,h as props
   render() {
     return (
       <div className={styles.container}>
         <div>
           <input type='input' placeholder='NAME' maxLength='20' className={styles.user}></input>
         </div>
-        <div>
-          <button className={`${styles.difficulty} ${styles.easy}`}>EASY</button>
-          <button className={`${styles.difficulty} ${styles.medium}`}>MEDIUM</button>
-          <button className={`${styles.difficulty} ${styles.hard}`}>HARD</button>
-        </div>
+        <DifficultyButton level={0}/>
+        <DifficultyButton level={1}/>
+        <DifficultyButton level={2}/>
         <Link to='/play'>
           <button className={styles.start}>START</button>
         </Link>

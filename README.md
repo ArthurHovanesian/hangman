@@ -52,3 +52,5 @@ Journal
 13. Idea: add glow around colors to make them look like neon lights. make change keys to glow only along lines instead of whole cell. also on the load screen text.
 
 14. Idea: go full out with neon theme and change text to look like neon sign text, soften edges, and replace hexagon with word 'password' in neon colors that one by one dim upon a wrong guess
+
+15. BUG: second round keys still glow green even if they should be red
