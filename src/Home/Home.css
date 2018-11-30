@@ -7,18 +7,48 @@
   width: 60%;
   text-align: center;
   font-size: 40px;
+  font-family: 'Roboto', sans-serif;
   height: 50px;
   margin-top: 10%;
-  margin-bottom: 10%
+  margin-bottom: 10%;
+  border-color: #D3D3D3;
+  background-color: black;
+  color: white;
 }
 
 .difficulty {
   width: 19%;
   height: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
   margin: 0 1% 10% 1%;
+  background-color: black;
 }
 
 .start {
   width: 60%;
   height: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: #ff0dbf;
+  border-color: #ff0dbf;
+  background-color: black;
+}
+
+.easy {
+  border-color: #39FF14;
+  color: #39FF14;
+  background-color: black;
+}
+
+.medium {
+  border-color: yellow;
+  color: yellow;
+  background-color: black;
+}
+
+.hard {
+  border-color: red;
+  color: red;
+  background-color: black;
 }

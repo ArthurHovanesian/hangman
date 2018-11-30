@@ -14,15 +14,15 @@ class Home extends React.Component {
     return (
       <div className={styles.container}>
         <div>
-          <input type='input' placeholder='Name' maxLength='20' className={styles.user}></input>
+          <input type='input' placeholder='NAME' maxLength='20' className={styles.user}></input>
         </div>
         <div>
-          <button className={styles.difficulty}>Easy</button>
-          <button className={styles.difficulty}>Medium</button>
-          <button className={styles.difficulty}>Hard</button>
+          <button className={`${styles.difficulty} ${styles.easy}`}>EASY</button>
+          <button className={`${styles.difficulty} ${styles.medium}`}>MEDIUM</button>
+          <button className={`${styles.difficulty} ${styles.hard}`}>HARD</button>
         </div>
         <Link to='/play'>
-          <button className={styles.start}>Start!</button>
+          <button className={styles.start}>START</button>
         </Link>
       </div>
     )
