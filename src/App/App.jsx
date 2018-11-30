@@ -5,6 +5,7 @@ import Keyboard from '../Keyboard/Keyboard.jsx';
 import Lives from '../Lives/Lives.jsx';
 import CurrentScore from '../CurrentScore/CurrentScore.jsx';
 import Loading from '../Loading/Loading.jsx';
+import defaultKeys from './utilities.js';
 import styles from './App.css';
 
 class App extends React.Component {
@@ -19,39 +20,18 @@ class App extends React.Component {
       score: 0,
       reveal: [],
       attemptsLeft: 6,
-      keys: {
-        'Q': false,
-        'W': false,
-        'E': false,
-        'R': false,
-        'T': false,
-        'Y': false,
-        'U': false,
-        'I': false,
-        'O': false,
-        'P': false,
-        'A': false,
-        'S': false,
-        'D': false,
-        'F': false,
-        'G': false,
-        'H': false,
-        'J': false,
-        'K': false,
-        'L': false,
-        'Z': false,
-        'X': false,
-        'C': false,
-        'V': false,
-        'B': false,
-        'N': false,
-        'M': false
-      },
+      name: '',
+      difficulty: '',
+      keys: defaultKeys,
     };
   };
 
   componentDidMount() {
-    this.getNameAndDifficulty();
+    const nameAndDifficulty = this.getNameAndDifficulty();
+    this.setState({
+      name: nameAndDifficulty[0],
+      difficulty: nameAndDifficulty[1]
+    })
     this.getWord();
   }
 
@@ -74,7 +54,7 @@ class App extends React.Component {
     const path = window.location.pathname.split('/');
     const name = path[2];
     const difficulty = path[3];
-    console.log(name, difficulty);
+    return [name, difficulty];
   }
 
   getWord() {
@@ -94,7 +74,7 @@ class App extends React.Component {
       .catch(err => console.log(err))
       .then(() => {
         const { word } = this.state;
-        let keys = Object.assign({}, this.state.keys);
+        let keys = Object.assign({}, defaultKeys);
         word.forEach(letter => {
           letter = letter;
           keys[letter] = true;
@@ -118,6 +98,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.word)
     const { word, reveal, keys, attemptsLeft, notYetFound, score } = this.state;
     if (notYetFound > 0) {
       return (

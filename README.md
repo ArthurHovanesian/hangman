@@ -52,6 +52,7 @@ Journal
 14. Idea: go full out with neon theme and change text to look like neon sign text, soften edges, and replace hexagon with word 'password' in neon colors that one by one dim upon a wrong guess
 
 15. BUG: second round keys still glow green even if they should be red
+  -Fix: forgot to reassign keys to false after every round. 
 
 16. How to pass props through recat router <Link> tag?
-  -First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now? 
+  -First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now?
