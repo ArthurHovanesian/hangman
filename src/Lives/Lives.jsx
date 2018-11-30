@@ -15,7 +15,7 @@ class Lives extends React.Component {
       return (
         <div className={styles.container}>
           <svg height="300" className={`${styles.scale} ${styles.fade}`}>
-            <polyline points="300,150 225,280 75,280 0,150 75,20 225,20 300,150 0,150 75,20 225,280 75,280 225,20" stroke="purple" stroke-width="2" fill-rule="nonzero"/>
+            <polyline points="300,150 225,280 75,280 0,150 75,20 225,20 300,150 0,150 75,20 225,280 75,280 225,20" stroke="#ff0dbf" stroke-width="2" fill-rule="nonzero"/>
           </svg>
         </div>
       )

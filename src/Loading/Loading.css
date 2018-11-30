@@ -1,0 +1,7 @@
+.loading {
+  display: table;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  margin: 0 auto;
+}

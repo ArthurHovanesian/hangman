@@ -40,3 +40,9 @@ Journal
   -use "key" to track score and reset after score change
   -BUG: continuous refresh causing crash. Fix by setState on netyetfound variable to prevent constant updating
   -BUG: on new keyboard, key mouse is currently on gets stuck in hover state when not hovered and switches to unhovered state when it is hovered. only happens to first key. Fixed by conditional render on App based on number of letters to be found. Not the best fix, though.
+
+9. Idea: animate life bar to fill up to full after each round? Use setInterval to add 1 to live until reaching 6.
+
+10. Idea: change color of hover effect to match color of life bar
+
+11. Idea: instead of making an API call every round, just save like 1000 random words and cycle through those? 

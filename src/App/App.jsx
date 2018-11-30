@@ -4,6 +4,7 @@ import Word from '../Word/Word.jsx';
 import Keyboard from '../Keyboard/Keyboard.jsx';
 import Lives from '../Lives/Lives.jsx';
 import CurrentScore from '../CurrentScore/CurrentScore.jsx';
+import Loading from '../Loading/Loading.jsx';
 import styles from './App.css';
 
 class App extends React.Component {
@@ -117,12 +118,14 @@ class App extends React.Component {
           <Lives attemptsLeft={attemptsLeft} />
           <CurrentScore score={score} />
           <Word reveal={reveal}/>
-          <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} />
+          <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} attemptsLeft={attemptsLeft}/>
         </div>
       )
     } else {
       return (
-        <h1>Thinking...</h1>
+        <div>
+          <Loading score={score} />
+        </div>
       )
     }
   };
