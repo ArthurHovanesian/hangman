@@ -18,9 +18,7 @@
 
 .hovered {
   cursor: pointer;
-  /* background-color: red; */
-  border-color: white;
-  color: white;
+  color: black;
   transform: scale(1.15);
   transition: background-color .2s ease, transform .2s ease;
 }

@@ -13,6 +13,7 @@ app.get('/api/choose_word', (req, res) => {
     .catch(err => res.status(500).send(err));
 })
 
+//move to separate file utilities
 chooseWord = (data) => {
   const words = data.split('\n');
   const randInd = Math.floor(Math.random() * words.length);
