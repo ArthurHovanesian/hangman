@@ -14,9 +14,12 @@ class Home extends React.Component {
   }
 
   handleChange(name) {
-    this.setState({
-      name: name
-    })
+    const lowerCase = name.toLowerCase();
+    if ((lowerCase.charCodeAt(name.length - 1) >= 97 && lowerCase.charCodeAt(name.length - 1) <= 122) || (lowerCase.charCodeAt(name.length - 1) >= 48 && lowerCase.charCodeAt(name.length - 1) <= 57)) {
+      this.setState({name: name});
+    } else {
+      this.setState({name: name.slice(0, -1)});
+    };
   }
 
   render() {
@@ -27,7 +30,7 @@ class Home extends React.Component {
           <Title />
         </div>
         <div>
-          <input type='input' placeholder='NAME' maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
+          <input type='input' placeholder='NAME' value={name} maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
         </div>
         <Link to={{pathname: `/play/${name}/easy`}}>
           <Button level={0}/>
