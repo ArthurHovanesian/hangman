@@ -5,3 +5,7 @@
 .container {
   text-align: center;
 }
+
+.dim {
+  position: absolute;
+}

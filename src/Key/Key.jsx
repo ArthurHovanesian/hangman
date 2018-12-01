@@ -15,9 +15,10 @@ class Key extends React.Component {
       isClicked: false,
     }
   }
-  //don't use this.stae inside setstate
+
   handleHover() {
-    this.setState({isHovered: !this.state.isHovered})
+    const { isHovered } = this.state;
+    this.setState({isHovered: !isHovered})
   }
 
   handleClick() {
@@ -32,10 +33,7 @@ class Key extends React.Component {
     const { inWord } = this.props;
     return inWord ? 'correct' : 'incorrect';
   }
-// style={{backgroundColor: `${this.colors[attemptsLeft - 1]}`}}
-// box-shadow: 0px 0px 8px 2px #ff0dbf, 0px 0px 8px 2px #ff0dbf inset;
-// color: #ffa0e4;
-// text-shadow: 0px 0px 10px #ff0dbf;
+
   render() {
     const { letter, checkUserGuess, attemptsLeft } = this.props;
     const { isHovered, isClicked } = this.state;
