@@ -68,3 +68,9 @@ Journal
   -First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now?
 
 17. Bug: SHouldn't be allowed to submit empty name
+
+18. seprate out dataabse functions and server functinos
+
+19. Bug: upon losing, thousands of copies of current user and score are inserted into database
+  -Has to do with componentDidUpdate calling the function to make a post request
+  -temporary Fix: but condition in componentDidUpdate to check for prev vs curr gameover state

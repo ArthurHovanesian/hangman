@@ -5,6 +5,7 @@ import Keyboard from '../Keyboard/Keyboard.jsx';
 import Lives from '../Lives/Lives.jsx';
 import CurrentScore from '../CurrentScore/CurrentScore.jsx';
 import Loading from '../Loading/Loading.jsx';
+import LeaderBoard from '../LeaderBoard/LeaderBoard.jsx';
 import defaultKeys from './utilities.js';
 import styles from './App.css';
 
@@ -22,6 +23,8 @@ class App extends React.Component {
       attemptsLeft: 6,
       name: '',
       difficulty: '',
+      leaderBoard: [],
+      gameOver: false,
       keys: defaultKeys,
     };
   };
@@ -35,10 +38,11 @@ class App extends React.Component {
     this.getWord();
   }
 
-  componentDidUpdate(prevProps) {
-    const { attemptsLeft, notYetFound, score, name, difficulty } = this.state;
-    if (attemptsLeft === 0) {
+  componentDidUpdate(prevProps, prevState) {
+    const { attemptsLeft, notYetFound, score, name, difficulty, gameOver } = this.state;
+    if (attemptsLeft === 0 && prevState.gameOver === gameOver) {
       this.getLeaderBoard(name, difficulty, score);
+      console.log('hello')
     }
     if (notYetFound === 0) {
       this.getWord();
@@ -58,7 +62,10 @@ class App extends React.Component {
         score: score
       }
     })
-    .then(res => console.log(res))
+    .then(res => this.setState({
+      gameOver: true,
+      leaderBoard: res.data
+    }))
     .catch(err => console.log(err));
   }
 
@@ -112,20 +119,26 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.word)
-    const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty } = this.state;
-    if (notYetFound > 0) {
+    const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty, gameOver, leaderBoard } = this.state;
+    if (gameOver) {
+      return (
+        <div>
+          <LeaderBoard leaderBoard={leaderBoard} />
+        </div>
+      )
+    } else if (notYetFound === -1 || notYetFound === 0) {
+      return (
+        <div>
+          <Loading score={score} />
+        </div>
+      )
+    } else {
       return (
         <div >
           <Lives attemptsLeft={attemptsLeft} />
           <CurrentScore score={score} name={name} difficulty={difficulty}/>
           <Word reveal={reveal}/>
           <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} attemptsLeft={attemptsLeft}/>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <Loading score={score} />
         </div>
       )
     }

@@ -2,8 +2,10 @@ const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+const port = 3000;
+const app = express();
 
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
@@ -11,10 +13,6 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-
-const port = 3000;
-
-const app = express();
 
 //change this to path.join???
 app.use(express.static(__dirname + '/../public'));
