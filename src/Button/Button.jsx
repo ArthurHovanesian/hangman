@@ -6,8 +6,8 @@ class Button extends React.Component {
     super();
     this.handleHover = this.handleHover.bind(this);
     this.text = ['EASY', 'MEDIUM', 'HARD'];
-    this.textColors = ['#c3ffba', '#fbffaa', '#ffa8a8'];
-    this.borderColors = ['#39FF14', 'yellow', 'red'];
+    this.textColors = ['#ff8ee1', '#d393ff', '#9a93ff'];
+    this.borderColors = ['#ff00bb', '#9800ff', '#1000ff'];
     this.state = {
       isHovered: false,
     }

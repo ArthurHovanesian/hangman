@@ -1,0 +1,57 @@
+.container {
+  display: table;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 180px;
+  color: white;
+  display: table-cell;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.logo {
+  display: table-cell;
+}
+
+.p {
+  color: #ff8ee1;
+  text-shadow: 0px 0px 20px #ff00bb;
+}
+
+.a {
+  color: #f972ee;
+  text-shadow: 0px 0px 20px #ff0dea;
+}
+
+.s {
+  color: #e07cf9;
+  text-shadow: 0px 0px 20px #cb00ff;
+}
+
+.s2 {
+  color: #d393ff;
+  text-shadow: 0px 0px 20px #9800ff;
+}
+
+.c {
+  color: #b887ff;
+  text-shadow: 0px 0px 20px #6a00ff;
+}
+
+.o {
+  color: #b391ff;
+  text-shadow: 0px 0px 20px #5000ff;
+}
+
+.d {
+  color: #a58eff;
+  text-shadow: 0px 0px 20px #3300ff;
+}
+
+.e {
+  color: #9a93ff;
+  text-shadow: 0px 0px 20px #1000ff;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button.jsx';
+import Title from '../Title/Title.jsx';
 import styles from './Home.css';
 
 class Home extends React.Component {
@@ -22,6 +23,9 @@ class Home extends React.Component {
     const { name } = this.state;
     return (
       <div className={styles.container}>
+        <div>
+          <Title />
+        </div>
         <div>
           <input type='input' placeholder='NAME' maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
         </div>
