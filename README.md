@@ -6,9 +6,19 @@ TODO
   -Displays all instances of correct letter on click
 5. Limit guess to 6
   -something happens on losing
+    -popup
   -something happens on winning
+    -gain a point and try again
 7. Send name and difficult level data to App from homepage
 8. Make API call based on difficulty level
+9. neon effect on light indicator
+10. title on home page
+11. neon effect on loading screen
+12. clean up all the code. all of it. clean it up. make it professional.
+13. testing
+14. allow keyboard input
+15. limit characters used in name
+16. responsive design
 
 Journal
 1. Why not redux?

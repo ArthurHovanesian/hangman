@@ -36,9 +36,9 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { attemptsLeft, notYetFound, score } = this.state;
+    const { attemptsLeft, notYetFound, score, name, difficulty } = this.state;
     if (attemptsLeft === 0) {
-      alert('you lose')
+      this.getLeaderBoard(name, difficulty, score);
     }
     if (notYetFound === 0) {
       this.getWord();
@@ -48,6 +48,16 @@ class App extends React.Component {
         attemptsLeft: 6,
       })
     }
+  }
+
+  getLeaderBoard(name, difficulty, score) {
+    axios.post('/database/highscores', {
+      params: {
+        name: name,
+        difficulty: difficulty,
+        score: score
+      }
+    })
   }
 
   getNameAndDifficulty() {

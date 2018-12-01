@@ -23,7 +23,7 @@ class Home extends React.Component {
     return (
       <div className={styles.container}>
         <div>
-          <input type='input' placeholder='NAME' maxLength='20' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
+          <input type='input' placeholder='NAME' maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
         </div>
         <Link to={{pathname: `/play/${name}/easy`}}>
           <Button level={0}/>
