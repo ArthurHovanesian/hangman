@@ -1,13 +1,7 @@
 .scale {
   transform: scale(.6);
-  opacity: .7;
-}
-
-.fade {
-
 }
 
 .container {
-  display: table;
-  margin: 0 auto;
+  text-align: center;
 }
