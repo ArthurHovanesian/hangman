@@ -31,6 +31,17 @@ const insert = (name, difficulty, score, callback) => {
   })
 }
 
+const retrieve = (difficulty, callback) => {
+  const query = `SELECT * FROM ${difficulty} ORDER BY score DESC LIMIT 10`;
+  connection.query(query, (err, results) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+
 app.get('/api/choose_word/:difficulty', (req, res) => {
   const difficulty = req.params.difficulty;
   let wordLevel;
@@ -55,7 +66,13 @@ app.post('/database/highscores', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(results);
+      retrieve(difficulty, (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(results)
+        }
+      });
     }
   });
 })
