@@ -19,6 +19,9 @@ TODO
 14. allow keyboard input
 15. limit characters used in name
 16. responsive design
+17. instead of allowing one user multiple spot in database, update their score instead
+18. maybe not the best idea to make an api call every round. better to grab 100 words at the start?
+  -How to make them random? check network tab?
 
 Journal
 1. Why not redux?
@@ -74,3 +77,10 @@ Journal
 19. Bug: upon losing, thousands of copies of current user and score are inserted into database
   -Has to do with componentDidUpdate calling the function to make a post request
   -temporary Fix: but condition in componentDidUpdate to check for prev vs curr gameover state
+
+20. I want to animate life bar refilling after every Round
+  -setinterval to this setstate and add 1 to attemptsleft
+  -stuck in loop
+  -try putting nested conditionals and a stopinterval state. still stuck in loop
+  -works better with settimeout but now doesn't advance past loading screen
+  -Fix: settimout on getWOrd() after settimeout on switching to loading screen, with same time.

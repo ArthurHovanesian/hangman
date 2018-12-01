@@ -41,17 +41,29 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const { attemptsLeft, notYetFound, score, name, difficulty, gameOver } = this.state;
     if (attemptsLeft === 0 && prevState.gameOver === gameOver) {
-      this.getLeaderBoard(name, difficulty, score);
-      console.log('hello')
+      setTimeout(() => {this.getLeaderBoard(name, difficulty, score);}, 1500);
     }
     if (notYetFound === 0) {
-      this.getWord();
-      this.setState({
-        score: score + 1,
-        notYetFound: -1,
-        attemptsLeft: 6,
-      })
+      if (attemptsLeft === 6) {
+        setTimeout(() => {this.addScore()}, 1500);
+        setTimeout(() => {this.getWord()}, 1500);
+      } else {
+        setTimeout(() => {this.replenishLife()}, 100);
+      }
     }
+  }
+
+  replenishLife() {
+    const { attemptsLeft } = this.state;
+    this.setState({attemptsLeft: attemptsLeft + 1});
+  }
+
+  addScore() {
+    const { notYetFound, score } = this.state;
+    this.setState({
+      notYetFound: -1,
+      score: score + 1
+    });
   }
 
   getLeaderBoard(name, difficulty, score) {
@@ -118,15 +130,15 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.word)
     const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty, gameOver, leaderBoard } = this.state;
+    console.log('word', word, 'attempts', attemptsLeft, 'score', score, 'notfound', notYetFound)
     if (gameOver) {
       return (
         <div>
           <LeaderBoard leaderBoard={leaderBoard} />
         </div>
       )
-    } else if (notYetFound === -1 || notYetFound === 0) {
+    } else if (notYetFound === -1) {
       return (
         <div>
           <Loading score={score} />

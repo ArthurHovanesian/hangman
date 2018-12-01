@@ -56,7 +56,6 @@ app.get('/api/choose_word/:difficulty', (req, res) => {
 })
 
 app.post('/database/highscores', (req, res) => {
-  console.log(req.body.params)
   const name = req.body.params.name;
   const difficulty = req.body.params.difficulty;
   const score = req.body.params.score;
