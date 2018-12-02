@@ -135,7 +135,7 @@ class App extends React.Component {
     if (gameOver) {
       return (
         <div>
-          <LeaderBoard leaderBoard={leaderBoard} />
+          <LeaderBoard leaderBoard={leaderBoard} difficulty={difficulty}/>
         </div>
       )
     } else if (notYetFound === -1) {

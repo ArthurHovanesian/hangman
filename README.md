@@ -84,3 +84,5 @@ Journal
   -try putting nested conditionals and a stopinterval state. still stuck in loop
   -works better with settimeout but now doesn't advance past loading screen
   -Fix: settimout on getWOrd() after settimeout on switching to loading screen, with same time.
+
+21. When trying to reuse button component for the high scores page, i was not able to change the width. So i resorted to make a new variable in button component that chooses width based on props. Also added a level 3 mapping for this button. i probably should have refactored key component to be reuasble as the button component.  
