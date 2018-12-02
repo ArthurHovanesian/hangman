@@ -10,10 +10,8 @@ import defaultKeys from './utilities.js';
 import styles from './App.css';
 
 class App extends React.Component {
-  //is props necessary?
   constructor() {
     super();
-    //spinner for loading word
     this.checkUserGuess = this.checkUserGuess.bind(this);
     this.state = {
       word: [],

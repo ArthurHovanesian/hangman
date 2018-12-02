@@ -34,7 +34,7 @@
 9. - [x] User shouldn't be allowed to start game without typing in a name. Currently, game doesn't load if field is left blank, but it still navigates off the home screen.
   - Fix1: use condition to check for name and only render button when hame is typed out. Not the most elegant
   - Fix2: have button link back to homepage if no name is entered. Good but would be better to show message to user so they don't assume it's broken?
-  - Fix3: onClick, change placeholder value rather than linking to new page. Causes an error, though, if clicked and a name is entered, since the handleNoName function will not have been passed as props in that case. 
+  - Fix3: onClick, change placeholder value rather than linking to new page. Causes an error, though, if clicked and a name is entered, since the handleNoName function will not have been passed as props in that case.
   - Fix4: define variable click in Button component that checks for presence on handleNoName prop and is set to an empty function in its absence. This implementation could be improved, but show no errors in console.
 
 10. - [x] How to pass props through react router <Link> tag?
@@ -77,6 +77,10 @@
 12. - [x] Go full out with neon theme and change text to look like neon sign text, soften edges, and have effects for neon lights flickering
 
 13. - [ ] There should be some message when you lose, rather than going to the high score screen automatically.  
+
+14. - [ ] Upon losing, user should be able to see the word they missed
+
+15. - [ ] Oh my god! The flickering A from the title screen persists faintly on my screen. Did that damage my computer screen?!?!
 
 
 

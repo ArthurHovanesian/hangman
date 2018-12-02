@@ -6,7 +6,19 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "collectCoverage": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/database/",
+      "<rootDir>/node_modules/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -31,9 +43,15 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^7.0.1",
     "nodemon": "^1.18.7",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2"
