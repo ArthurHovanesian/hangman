@@ -20,14 +20,15 @@ class Button extends React.Component {
   }
 
   render() {
-    const { level } = this.props;
+    const { level, handleNoName } = this.props;
     const { isHovered } = this.state;
+    const click = handleNoName || (() => null);
     return (
       <span>
         {isHovered ? (
-          <button className={`${styles.hovered} ${styles.difficulty}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[level]}, 0px 0px 8px 2px ${this.borderColors[level]} inset`, color: `${this.textColors[level]}`, textShadow: `0px 0px 10px ${this.borderColors[level]}`, width: `${this.width[level]}`}} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} >{this.text[level]}</button>
+          <button className={`${styles.hovered} ${styles.difficulty}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[level]}, 0px 0px 8px 2px ${this.borderColors[level]} inset`, color: `${this.textColors[level]}`, textShadow: `0px 0px 10px ${this.borderColors[level]}`, width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => click()}>{this.text[level]}</button>
         ) : (
-          <button className={`${styles.notHovered} ${styles.difficulty}`} style={{width: `${this.width[level]}`}} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>{this.text[level]}</button>
+          <button className={`${styles.notHovered} ${styles.difficulty}`} style={{width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover}>{this.text[level]}</button>
         )}
       </span>
     )

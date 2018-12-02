@@ -8,8 +8,10 @@ class Home extends React.Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    this.handleNoName = this.handleNoName.bind(this);
     this.state = {
-      name:'',
+      name: '',
+      placeholder: 'NAME',
     }
   }
 
@@ -22,25 +24,40 @@ class Home extends React.Component {
     };
   }
 
+  handleNoName() {
+    this.setState({placeholder: 'PLEASE ENTER NAME'});
+  }
+
   render() {
-    const { name } = this.state;
+    const { name, placeholder } = this.state;
     return (
       <div className={styles.container}>
         <div>
           <Title />
         </div>
         <div>
-          <input type='input' placeholder='NAME' value={name} maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
+          <input type='input' placeholder={placeholder} value={name} maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
         </div>
-        <Link to={{pathname: `/play/${name}/easy`}}>
-          <Button level={0}/>
-        </Link>
-        <Link to={{pathname: `/play/${name}/medium`}}>
-          <Button level={1}/>
-        </Link>
-        <Link to={{pathname: `/play/${name}/hard`}}>
-          <Button level={2}/>
-        </Link>
+        {name === '' ? (
+          <div>
+            <Button level={0} handleNoName={this.handleNoName}/>
+            <Button level={1} handleNoName={this.handleNoName}/>
+            <Button level={2} handleNoName={this.handleNoName}/>
+          </div>
+        ) : (
+          <div>
+            <Link to={{pathname: `/play/${name}/easy`}}>
+              <Button level={0}/>
+            </Link>
+            <Link to={{pathname: `/play/${name}/medium`}}>
+              <Button level={1}/>
+            </Link>
+            <Link to={{pathname: `/play/${name}/hard`}}>
+              <Button level={2}/>
+            </Link>
+          </div>
+        )}
+
       </div>
     )
   }

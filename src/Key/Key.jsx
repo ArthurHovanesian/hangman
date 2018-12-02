@@ -46,13 +46,13 @@ class Key extends React.Component {
       )
     } else if (isHovered) {
       return (
-        <div className={`${styles.hovered} ${styles.key} ${styles[clickClass]}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[attemptsLeft - 1]}, 0px 0px 8px 2px ${this.borderColors[attemptsLeft - 1]} inset`, color: `${this.textColors[attemptsLeft - 1]}`, textShadow: `0px 0px 10px ${this.borderColors[attemptsLeft - 1]}`}} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
+        <div className={`${styles.hovered} ${styles.key} ${styles[clickClass]}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[attemptsLeft - 1]}, 0px 0px 8px 2px ${this.borderColors[attemptsLeft - 1]} inset`, color: `${this.textColors[attemptsLeft - 1]}`, textShadow: `0px 0px 10px ${this.borderColors[attemptsLeft - 1]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
           {letter}
         </div>
       )
     } else {
       return (
-        <div className={`${styles.notHovered} ${styles.key} ${styles[clickClass]}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
+        <div className={`${styles.notHovered} ${styles.key} ${styles[clickClass]}`} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
           {letter}
         </div>
       )
