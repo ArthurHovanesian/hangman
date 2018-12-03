@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import HighScore from '../HighScore/HighScore.jsx';
 import Button from '../Button/Button.jsx';
 import { Link } from 'react-router-dom';
@@ -19,5 +20,10 @@ const LeaderBoard = ({ leaderBoard, difficulty }) => {
     </div>
   )
 }
+
+LeaderBoard.propTypes = {
+  leaderBoard: PropTypes.array.isRequired,
+  difficulty: PropTypes.string.isRequired,
+};
 
 export default LeaderBoard;

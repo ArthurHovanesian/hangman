@@ -10,8 +10,8 @@ import defaultKeys from './utilities.js';
 import styles from './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.checkUserGuess = this.checkUserGuess.bind(this);
     this.state = {
       word: [],
@@ -128,7 +128,6 @@ class App extends React.Component {
 
   render() {
     const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty, gameOver, leaderBoard } = this.state;
-    console.log(word)
     if (gameOver) {
       return (
         <div>

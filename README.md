@@ -92,6 +92,11 @@
 
 17. - [ ] Some type of two player mode where one person picks word. But kind of lame if that's all they can do.
 
+18. - [ ] To scale to include words with " ' " and " - " and " ", these symbols should automatically appear on screen.
+
+19. - [ ] To scale to include larger words or multiple words, I need to figure out responsive designs techniques, in order to reduce size of lettering appearing on screen.  
+
+20. - [ ] Currently, if a player ties with the current rank 10, they will not appear on high scores list, since when I grab, it is sorted by score, then id, and then I use only the top ten. Do I like this? Would I want to show all the ties for 10th place? Or keep it as whoever was the earliest entry in that position? 
 
 
 
@@ -128,4 +133,4 @@
 
 13. - [ ] It's pointless to store more than 10 records in database per difficulty level if I'm only going to be grabbing the top ten. When user submits score, check against scores in database to see if current score makes it to top ten, insert it, and delete the now lowest score.
 
-14. - [ ] Conditional rendered of difficulty button at Home could be written more cleanly, possibly. Need to look more into how to use react router. 
+14. - [ ] Conditional rendered of difficulty button at Home could be written more cleanly, possibly. Need to look more into how to use react router.

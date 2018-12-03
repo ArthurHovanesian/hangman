@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Button.css';
 
 class Button extends React.Component {
@@ -57,5 +58,10 @@ class Button extends React.Component {
     )
   }
 }
+
+Button.propTypes = {
+  level: PropTypes.number.isRequired,
+  toggleCarousel: PropTypes.func.isRequired,
+};
 
 export default Button;

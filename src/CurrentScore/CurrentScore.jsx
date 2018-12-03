@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './CurrentScore.css';
 
 const CurrentScore = ({ score, name, difficulty }) => {
@@ -16,5 +17,11 @@ const CurrentScore = ({ score, name, difficulty }) => {
     </div>
   )
 }
+
+CurrentScore.propTypes = {
+  score: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  difficulty: PropTypes.string.isRequired,
+};
 
 export default CurrentScore;

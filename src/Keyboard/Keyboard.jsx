@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Key from '../Key/Key.jsx';
 import styles from './Keyboard.css';
 
@@ -25,5 +26,11 @@ const Keyboard = ({ keys, checkUserGuess, attemptsLeft }) => {
     </div>
   )
 }
+
+Keyboard.propTypes = {
+  keys: PropTypes.array.isRequired,
+  attemptsLeft: PropTypes.number.isRequired,
+  checkUserGuess: PropTypes.func.isRequired,
+};
 
 export default Keyboard;

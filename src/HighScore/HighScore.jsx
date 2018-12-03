@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './HighScore.css';
 
 const HighScore = ({ name, score, rank }) => {
@@ -13,5 +14,11 @@ const HighScore = ({ name, score, rank }) => {
     </tr>
   )
 }
+
+HighScore.propTypes = {
+  score: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  rank: PropTypes.string.isRequired,
+};
 
 export default HighScore;

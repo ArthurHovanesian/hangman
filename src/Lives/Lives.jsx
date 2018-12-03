@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Lives.css';
 
 const Lives = ({ attemptsLeft }) => {
@@ -37,5 +38,9 @@ const Lives = ({ attemptsLeft }) => {
     </div>
   )
 }
+
+Lives.propTypes = {
+  attemptsLeft: PropTypes.number.isRequired,
+};
 
 export default Lives;

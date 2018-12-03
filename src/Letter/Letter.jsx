@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Letter.css';
 
 const Letter = ({ entry }) => {
@@ -16,5 +17,9 @@ const Letter = ({ entry }) => {
     )
   }
 }
+
+Letter.propTypes = {
+  entry: PropTypes.object.isRequired,
+};
 
 export default Letter;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Loading.css';
 
 const Loading = ({ score }) => {
@@ -9,5 +10,8 @@ const Loading = ({ score }) => {
     </div>
   )
 }
+Loading.propTypes = {
+  score: PropTypes.number.isRequired,
+};
 
 export default Loading;

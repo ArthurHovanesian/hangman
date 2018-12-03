@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Key.css';
 
 class Key extends React.Component {
@@ -80,5 +81,12 @@ class Key extends React.Component {
 
   }
 }
+
+Key.propTypes = {
+  attemptsLeft: PropTypes.number.isRequired,
+  letter: PropTypes.string.isRequired,
+  inWord: PropTypes.string.isRequired,
+  checkUserGuess: PropTypes.func.isRequired,
+};
 
 export default Key;
