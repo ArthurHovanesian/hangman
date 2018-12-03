@@ -1,4 +1,23 @@
-# hangman
+# PASSCODE
+
+## Getting Started
+Make sure mysql is running
+`
+mysql.server start
+`
+
+Build the bundle
+`
+npm run build
+`
+
+Start the server
+`
+npm start
+`
+
+Play the game at localhost:3000
+
 
 ## Bugs
 1. - [x] User shouldn't be able to select letters before word is loaded in. Should not load component until after word is there.
@@ -48,6 +67,9 @@
 13. - [x] Oh my god! The flickering 'A' from the title screen persists faintly on my screen. Did that damage my computer pixels?!?!
   - Ok it's gone
 
+14. - [ ] eslint not working with jsx. Showing fatal errors on = signs. Messing with eslintrc file only makes it worse.
+
+
 
 
 ## Ideas
@@ -96,41 +118,41 @@
 
 19. - [ ] To scale to include larger words or multiple words, I need to figure out responsive designs techniques, in order to reduce size of lettering appearing on screen.  
 
-20. - [ ] Currently, if a player ties with the current rank 10, they will not appear on high scores list, since when I grab, it is sorted by score, then id, and then I use only the top ten. Do I like this? Would I want to show all the ties for 10th place? Or keep it as whoever was the earliest entry in that position? 
+20. - [ ] Currently, if a player ties with the current rank 10, they will not appear on high scores list, since when I grab, it is sorted by score, then id, and then I use only the top ten. Do I like this? Would I want to show all the ties for 10th place? Or keep it as whoever was the earliest entry in that position?
 
 
 
 ## Optimizations / Best Practices
 1. - [ ] Add unit tests
+  - Added a few, but trickier than I thought. Need more time to look through docs for jest/enzyme
 
-2. - [ ] Separate out database functions and server functions
+2. - [x] Separate out database functions and server functions
 
-3. - [ ] Scour code for repetition and clean up, functions that are too big and complicated, logic that could be simplified.
+3. - [ ] Use AirBnB style guide and linter
+  - buggy with jsx for some reason
 
-4. - [ ] Use AirBnB style guide and linter
+4. - [ ] getWord checkUserGuess functions have too much going on / are not very clean. Hard to figure it out just by reading them. Separate concerns and tighten them up.
 
-5. - [ ] getWord checkUserGuess functions have too much going on / are not very clean. Hard to figure it out just by reading them. Separate concerns and tighten them up.
-
-6. - [x] Routing logic for virtual keypress
+5. - [x] Routing logic for virtual keypress
   - trigger handleClick function on App level to check for existence of Letter
   - Redo: initialize keyboard component with information about its presence in the word, rather than performing this logic on the keypress itself
   - Create object of key states in App component, which is altered on mount and passed down to keyboard component
     - Initially had three different arrays for top, bottom, middle, lots of repetition
     - This cut down on repetition and an object allows for constant time lookup
 
-7. - [x] Write function in Lives component that return the correct html given an input, instead of relying on 6 conditional statements.
+6. - [x] Write function in Lives component that return the correct html given an input, instead of relying on 6 conditional statements.
 
-8. - [ ] Discovered a better implementation of life bar animation using componentWillUnmount. Try to refactor original solution if time.
+7. - [ ] Discovered a better implementation of life bar animation using componentWillUnmount. Try to refactor original solution if time.
 
-9. - [ ] I really should have tried using Redux. App.jsx is getting messy and has too many state variable to keep track of.
+8. - [ ] I really should have tried using Redux. App.jsx is getting messy and has too many state variable to keep track of.
 
-10. - [ ] Not happy with implementation of how app know which letter to reveal. Current implementation of an array of objects might be overkill.
+9. - [ ] Not happy with implementation of how app know which letter to reveal. Current implementation of an array of objects might be overkill.
 
-11. - [ ] When trying to reuse button component for the high scores page, I am not able to change the width.
+10. - [ ] When trying to reuse button component for the high scores page, I am not able to change the width.
   - Temporary Fix: I resorted to make a new variable in button component that chooses width based on props. Also added a level 3 mapping for this button. I probably should have refactored key component to be reusable as the button component.
 
-12. - [x] Prevent user from typing in certain characters as username
+11. - [x] Prevent user from typing in certain characters as username
 
-13. - [ ] It's pointless to store more than 10 records in database per difficulty level if I'm only going to be grabbing the top ten. When user submits score, check against scores in database to see if current score makes it to top ten, insert it, and delete the now lowest score.
+12. - [ ] It's pointless to store more than 10 records in database per difficulty level if I'm only going to be grabbing the top ten. When user submits score, check against scores in database to see if current score makes it to top ten, insert it, and delete the now lowest score.
 
-14. - [ ] Conditional rendered of difficulty button at Home could be written more cleanly, possibly. Need to look more into how to use react router.
+13. - [ ] Conditional rendered of difficulty button at Home could be written more cleanly, possibly. Need to look more into how to use react router.
