@@ -33,7 +33,7 @@ class Title extends React.Component {
     const { letteringTick, logoTick } = this.state;
     const quickFlicker = letteringTick % 2 === 0 ? 'a' : 'off';
     const unevenFlicker = letteringTick % 10 === 0 || letteringTick % 7 === 0 ? 'off' : 's';
-    const slowFlicker = letteringTick % 10 === 0 || letteringTick % 10 === 1 ? 'off' : 'o';
+    const slowFlicker = letteringTick % 20 === 0 || letteringTick % 20 === 1 ? 'off' : 'o';
     return (
       <div className={styles.container}>
         <span className={styles.logo}>
