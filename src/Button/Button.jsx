@@ -28,7 +28,7 @@ class Button extends React.Component {
         {isHovered ? (
           <button className={`${styles.hovered} ${styles.difficulty}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[level]}, 0px 0px 8px 2px ${this.borderColors[level]} inset`, color: `${this.textColors[level]}`, textShadow: `0px 0px 10px ${this.borderColors[level]}`, width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => click()}>{this.text[level]}</button>
         ) : (
-          <button className={`${styles.notHovered} ${styles.difficulty}`} style={{width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover}>{this.text[level]}</button>
+          <button className={`${styles.notHovered} ${styles.difficulty}`} style={{width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => click()}>{this.text[level]}</button>
         )}
       </span>
     )

@@ -148,7 +148,7 @@ class App extends React.Component {
           <Lives attemptsLeft={attemptsLeft} />
           <CurrentScore score={score} name={name} difficulty={difficulty}/>
           <Word reveal={reveal}/>
-          <Keyboard key={score} keys={keys} checkUserGuess={this.checkUserGuess} attemptsLeft={attemptsLeft}/>
+          <Keyboard keys={keys} checkUserGuess={this.checkUserGuess} attemptsLeft={attemptsLeft}/>
         </div>
       )
     }

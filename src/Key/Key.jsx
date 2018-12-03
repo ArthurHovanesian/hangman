@@ -7,7 +7,7 @@ class Key extends React.Component {
     super(props);
     this.handleHover = this.handleHover.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.checkUserGuess = this.checkUserGuess.bind(this);
+    this.isCorrect = this.isCorrect.bind(this);
     this.borderColors = ['red','#ff4500','yellow','#39FF14','#00FFFF','#ff0dbf'];
     this.textColors = ['#ffa8a8', '#ffbfa8', '#fbffaa', '#c3ffba', '#caf9f9', '#ffa0e4'];
     this.state = {
@@ -29,7 +29,7 @@ class Key extends React.Component {
     checkUserGuess(letter);
   }
 
-  checkUserGuess(){
+  isCorrect() {
     const { inWord } = this.props;
     return inWord ? 'correct' : 'incorrect';
   }
@@ -37,7 +37,7 @@ class Key extends React.Component {
   render() {
     const { letter, checkUserGuess, attemptsLeft } = this.props;
     const { isHovered, isClicked } = this.state;
-    const clickClass = isClicked ?  this.checkUserGuess() : '';
+    const clickClass = isClicked ?  this.isCorrect() : '';
     if (isClicked) {
       return (
         <div className={`${styles.key} ${styles[clickClass]}`} >

@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/15</span>
+        <span class='fraction'>12/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>12/15</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -86,13 +86,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -103,15 +103,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,14 +123,14 @@
 import styles from './Button.css';
 &nbsp;
 class Button extends React.Component {
-<span class="fstat-no" title="function not covered" >  co</span>nstructor() {
-<span class="cstat-no" title="statement not covered" >    super();</span>
-<span class="cstat-no" title="statement not covered" >    this.handleHover = this.handleHover.bind(this);</span>
-<span class="cstat-no" title="statement not covered" >    this.text = ['EASY', 'MEDIUM', 'HARD', 'TRY AGAIN'];</span>
-<span class="cstat-no" title="statement not covered" >    this.textColors = ['#ff8ee1', '#d393ff', '#9a93ff', '#9a93ff'];</span>
-<span class="cstat-no" title="statement not covered" >    this.borderColors = ['#ff00bb', '#9800ff', '#1000ff', '#1000ff'];</span>
-<span class="cstat-no" title="statement not covered" >    this.width = ['19%', '19%', '19%', '50%'];</span>
-<span class="cstat-no" title="statement not covered" >    this.state = {</span>
+  constructor() {
+    super();
+    this.handleHover = this.handleHover.bind(this);
+    this.text = ['EASY', 'MEDIUM', 'HARD', 'TRY AGAIN'];
+    this.textColors = ['#ff8ee1', '#d393ff', '#9a93ff', '#9a93ff'];
+    this.borderColors = ['#ff00bb', '#9800ff', '#1000ff', '#1000ff'];
+    this.width = ['19%', '19%', '19%', '50%'];
+    this.state = {
       isHovered: false,
     }
   }
@@ -140,16 +140,16 @@ class Button extends React.Component {
 <span class="cstat-no" title="statement not covered" >    this.setState({isHovered: !isHovered})</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  re</span>nder() {
-    const { level, handleNoName } = <span class="cstat-no" title="statement not covered" >this.props;</span>
-    const { isHovered } = <span class="cstat-no" title="statement not covered" >this.state;</span>
-    const click = <span class="cstat-no" title="statement not covered" >handleNoName || (<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >null)</span>;</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
+  render() {
+    const { level, handleNoName } = this.props;
+    const { isHovered } = this.state;
+    const click = handleNoName || (<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >null)</span></span>;
+    return (
       &lt;span&gt;
         {isHovered ? (
-          &lt;button className={`${styles.hovered} ${styles.difficulty}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[level]}, 0px 0px 8px 2px ${this.borderColors[level]} inset`, color: `${this.textColors[level]}`, textShadow: `0px 0px 10px ${this.borderColors[level]}`, width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >click()}</span>&gt;{this.text[level]}&lt;/button&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >          &lt;button className={`${styles.hovered} ${styles.difficulty}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[level]}, 0px 0px 8px 2px ${this.borderColors[level]} inset`, color: `${this.textColors[level]}`, textShadow: `0px 0px 10px ${this.borderColors[level]}`, width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >click()}</span>&gt;{this.text[level]}&lt;/button&gt;</span>
         ) : (
-          &lt;button className={`${styles.notHovered} ${styles.difficulty}`} style={{width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover}&gt;{this.text[level]}&lt;/button&gt;
+          &lt;button className={`${styles.notHovered} ${styles.difficulty}`} style={{width: `${this.width[level]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() =&gt; click()}&gt;{this.text[level]}&lt;/button&gt;
         )}
       &lt;/span&gt;
     )
@@ -163,7 +163,7 @@ export default Button;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 02 2018 14:27:36 GMT-0800 (Pacific Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 02 2018 16:56:28 GMT-0800 (Pacific Standard Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>
