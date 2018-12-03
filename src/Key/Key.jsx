@@ -90,7 +90,6 @@ class Key extends React.Component {
 Key.propTypes = {
   attemptsLeft: PropTypes.number.isRequired,
   letter: PropTypes.string.isRequired,
-  inWord: PropTypes.string.isRequired,
   checkUserGuess: PropTypes.func.isRequired,
 };
 

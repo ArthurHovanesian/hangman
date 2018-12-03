@@ -128,7 +128,7 @@ class App extends React.Component {
 
   render() {
     const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty, gameOver, leaderBoard } = this.state;
-    console.log(word)
+    // console.log(word)
     if (gameOver) {
       return (
         <div>

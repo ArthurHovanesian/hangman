@@ -68,7 +68,7 @@ class Button extends React.Component {
 
 Button.propTypes = {
   level: PropTypes.number.isRequired,
-  toggleCarousel: PropTypes.func.isRequired,
+  handleNoName: PropTypes.func.isRequired,
 };
 
 export default Button;

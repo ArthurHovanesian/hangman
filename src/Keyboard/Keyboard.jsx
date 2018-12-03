@@ -35,7 +35,7 @@ const Keyboard = ({ keys, checkUserGuess, attemptsLeft }) => {
 }
 
 Keyboard.propTypes = {
-  keys: PropTypes.array.isRequired,
+  keys: PropTypes.object.isRequired,
   attemptsLeft: PropTypes.number.isRequired,
   checkUserGuess: PropTypes.func.isRequired,
 };
