@@ -1,6 +1,11 @@
 # PASSCODE
 
 ## Getting Started
+Install packages
+```
+npm install
+```
+
 Make sure mysql is running
 ```
 mysql.server start
