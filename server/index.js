@@ -1,44 +1,13 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
+const db = require('../database/index.js');
+
 const port = 3000;
 const app = express();
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'passcode'
-});
-
-connection.connect();
-
-//change this to path.join???
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.json());
-
-const insert = (name, difficulty, score, callback) => {
-  const query = `INSERT INTO ${difficulty} (name, score) VALUES ('${name}', ${score})`;
-  connection.query(query, (err, results) => {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, results);
-    }
-  })
-}
-
-const retrieve = (difficulty, callback) => {
-  const query = `SELECT * FROM ${difficulty} ORDER BY score DESC LIMIT 10`;
-  connection.query(query, (err, results) => {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, results);
-    }
-  })
-}
 
 app.get('/api/choose_word/:difficulty', (req, res) => {
   const difficulty = req.params.difficulty;
@@ -59,22 +28,21 @@ app.post('/database/highscores', (req, res) => {
   const name = req.body.params.name;
   const difficulty = req.body.params.difficulty;
   const score = req.body.params.score;
-  insert(name, difficulty, score, (err, results) => {
+  db.insert(name, difficulty, score, (err, success) => {
     if (err) {
-      console.log(err);
+      res.status(500).send(err);
     } else {
-      retrieve(difficulty, (err, results) => {
+      db.retrieve(difficulty, (err, results) => {
         if (err) {
-          console.log(err);
+          res.status(500).send(err);
         } else {
-          res.send(results)
+          res.status(200).send(results)
         }
       });
     }
   });
 })
 
-//move to separate file utilities
 chooseWord = (data) => {
   const words = data.split('\n');
   const randInd = Math.floor(Math.random() * words.length);
