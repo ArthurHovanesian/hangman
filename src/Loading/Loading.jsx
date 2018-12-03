@@ -6,7 +6,7 @@ const Loading = ({ score }) => {
   const round = score + 1;
   return (
     <div className={styles.loading}>
-      <h1 class>
+      <h1>
         Round {round}
       </h1>
     </div>
