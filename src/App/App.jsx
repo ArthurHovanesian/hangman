@@ -39,7 +39,7 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     const { attemptsLeft, notYetFound, score, name, difficulty, gameOver } = this.state;
     if (attemptsLeft === 0 && prevState.gameOver === gameOver) {
-      setTimeout(() => {this.getLeaderBoard(name, difficulty, score);}, 1500);
+      setTimeout(() => {this.getLeaderBoard(name, difficulty, score);}, 4000);
     }
     if (notYetFound === 0) {
       if (attemptsLeft === 6) {
@@ -94,7 +94,7 @@ class App extends React.Component {
     axios.get(`/api/choose_word/${difficulty}`, {difficulty: difficulty})
       .then(res => {
         let word = res.data.toUpperCase().split('');
-        let reveal = word.map(letter => ({letter: letter, show: false}));
+        let reveal = word.map(letter => ({letter: letter, show: false, missed: false}));
         this.setState({
           word: word,
           notYetFound: word.length,
@@ -119,7 +119,10 @@ class App extends React.Component {
     let numAttempts = attemptsLeft;
     let lettersFound = word.filter(letter => letter === query);
     lettersFound.length === 0 ? numAttempts -= 1 : null;
-    let check = reveal.map(entry => entry.letter === query ? ({letter: entry.letter, show: true}) : entry)
+    let check = reveal.map(entry => entry.letter === query ? ({letter: entry.letter, show: true, missed: false}) : entry);
+    if (numAttempts === 0) {
+      check = reveal.map(entry => entry.show === false ? ({letter: entry.letter, show: false, missed: true}) : entry);
+    }
     this.setState({
       notYetFound: notYetFound - lettersFound.length,
       reveal: check,
