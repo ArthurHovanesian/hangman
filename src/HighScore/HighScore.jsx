@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from './HighScore.css';
 
-const HighScore = ({ name, score }) => {
+const HighScore = ({ name, score, rank }) => {
   return (
-    <div>
-      <span>
+    <tr className={styles.row}>
+      <td id={styles.name} className={`${styles[rank]}`}>
         {name}
-      </span>
-      <span>
+      </td>
+      <td id={styles.score} className={`${styles[rank]}`}>
         {score}
-      </span>
-    </div>
+      </td>
+    </tr>
   )
 }
 

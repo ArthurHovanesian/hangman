@@ -17,11 +17,11 @@
 
 .leaderBoard {
   border: 1px solid white;
-  box-shadow: 0px 0px 8px 2px #ff00bb, 0px 0px 8px 2px #ff00bb inset;
+  box-shadow: 0px 0px 8px 2px #9800ff, 0px 0px 8px 2px #9800ff inset;
   width: 50%;
   height: 50%;
   font-size: 40px;
   display: table;
-  margin: 20px auto;
+  margin: 50px auto;
 
 }
