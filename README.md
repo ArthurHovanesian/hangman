@@ -130,13 +130,15 @@ Play the game at localhost:3000
 
 
 ## Optimizations / Best Practices
-1. - [ ] Add unit tests
+1. - [x] Add unit tests
   - Added a few, but trickier than I thought. Need more time to look through docs for jest/enzyme
+  - Have 75% line coverage but having trouble mocking any functions that require an api call
 
 2. - [x] Separate out database functions and server functions
 
-3. - [ ] Use AirBnB style guide and linter
+3. - [x] Use AirBnB style guide and linter
   - buggy with jsx for some reason
+  - Did it manually, still can't get it to work work properly on js
 
 4. - [ ] getWord checkUserGuess functions have too much going on / are not very clean. Hard to figure it out just by reading them. Separate concerns and tighten them up.
 
@@ -151,7 +153,7 @@ Play the game at localhost:3000
 
 7. - [ ] Discovered a better implementation of life bar animation using componentWillUnmount. Try to refactor original solution if time.
 
-8. - [ ] I really should have tried using Redux. App.jsx is getting messy and has too many state variable to keep track of and pass down. 
+8. - [ ] I really should have tried using Redux. App.jsx is getting messy and has too many state variable to keep track of and pass down.
 
 9. - [ ] Not happy with implementation of how app know which letter to reveal. Current implementation of an array of objects might be overkill.
 
