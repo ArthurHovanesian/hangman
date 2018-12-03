@@ -34,7 +34,7 @@ Play the game at localhost:3000
   - Fixed: try using display: table or text-align: center
 
 5. - [x] On keyboard and buttons, the key that mouse is currently on gets stuck in hover state if the pages refreshes and mouse happens to be over one of the keys buttons. Has to do with onMouseEnter? Or the way I implemented this hover state in general?
-  Fixed: Changed onMouseEnter to onMouseOver, because OME will only trigger when mouse goes from out to in, whereas OMO trigger if mouse is already on the element.
+  - Fixed: Changed onMouseEnter to onMouseOver, because OME will only trigger when mouse goes from out to in, whereas OMO trigger if mouse is already on the element.
 
 6. - [x] During second round of game, keys still glow green even if they should be red
   - Fix: forgot to reassign keys to false after every round.
@@ -57,17 +57,17 @@ Play the game at localhost:3000
   - Fix4: define variable click in Button component that checks for presence on handleNoName prop and is set to an empty function in its absence. This implementation could be improved, but show no errors in console.
 
 10. - [x] How to pass props through react router <Link> tag?
-  -First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now?
+  - First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now?
 
 11. - [x] When game is over, hovering over keys makes their letters turn black. Also the whole keyboard should just be disabled or something after a loss.
-  -Fix: disabled ability to click after attemptsLeft reaches 0
+  - Fix: disabled ability to click after attemptsLeft reaches 0
 
 12. - [ ] Refreshing page during game shows 'cannot GET' message on blank page. Is it possible for refresh to take you back to home page instead?
 
-13. - [x] Oh my god! The flickering 'A' from the title screen persists faintly on my screen. Did that damage my computer pixels?!?!
+13. - [x] Oh my god...the flickering 'A' from the title screen persists faintly on the screen. Screen damaged forever?
   - Ok it's gone
 
-14. - [ ] eslint not working with jsx. Showing fatal errors on = signs. Messing with eslintrc file only makes it worse.
+14. - [ ] Eslint not working with jsx. Showing fatal errors on = signs. Messing with eslintrc file only makes it worse.
 
 
 
