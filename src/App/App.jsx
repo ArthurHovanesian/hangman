@@ -38,7 +38,7 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { attemptsLeft, notYetFound, score, name, difficulty, gameOver } = this.state;
-    if (attemptsLeft === 0 && prevState.gameOver === gameOver) {
+    if (attemptsLeft === 0 && !prevState.gameOver) {
       setTimeout(() => {this.getLeaderBoard(name, difficulty, score);}, 4000);
     }
     if (notYetFound === 0) {
@@ -90,8 +90,8 @@ class App extends React.Component {
     const difficulty = this.getNameAndDifficulty()[1];
     axios.get(`/api/choose_word/${difficulty}`, {difficulty: difficulty})
       .then(res => {
-        let word = res.data.toUpperCase().split('');
-        let reveal = word.map(letter => ({letter: letter, show: false, missed: false}));
+        const word = res.data.toUpperCase().split('');
+        const reveal = word.map(letter => ({letter: letter, show: false, missed: false}));
         this.setState({
           word: word,
           notYetFound: word.length,
@@ -100,8 +100,7 @@ class App extends React.Component {
       })
       .catch(err => console.log(err))
       .then(() => {
-        const { word } = this.state;
-        let keys = Object.assign({}, defaultKeys);
+        const keys = Object.assign({}, defaultKeys);
         word.forEach(letter => {
           letter = letter;
           keys[letter] = true;
