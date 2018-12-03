@@ -36,13 +36,25 @@ class Home extends React.Component {
           <Title />
         </div>
         <div>
-          <input type='input' placeholder={placeholder} value={name} maxLength='10' className={styles.user} onChange={(event) => this.handleChange(event.target.value)}></input>
+          <input type="input"
+                 placeholder={placeholder}
+                 value={name} maxLength="10"
+                 className={styles.user}
+                 onChange={(event) => this.handleChange(event.target.value)}
+          >
+          </input>
         </div>
         {name === '' ? (
           <div>
-            <Button level={0} handleNoName={this.handleNoName}/>
-            <Button level={1} handleNoName={this.handleNoName}/>
-            <Button level={2} handleNoName={this.handleNoName}/>
+            <Button level={0}
+                    handleNoName={this.handleNoName}
+            />
+            <Button level={1}
+                    handleNoName={this.handleNoName}
+            />
+            <Button level={2}
+                    handleNoName={this.handleNoName}
+            />
           </div>
         ) : (
           <div>

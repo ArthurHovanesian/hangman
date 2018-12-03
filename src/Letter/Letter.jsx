@@ -12,7 +12,7 @@ const Letter = ({ entry }) => {
   } else {
     return (
       <div className={styles.letter}>
-        {entry.show ? entry.letter : ''}
+        {entry.show ? entry.letter : ""}
       </div>
     )
   }

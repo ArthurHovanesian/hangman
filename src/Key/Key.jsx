@@ -48,7 +48,12 @@ class Key extends React.Component {
     };
     const hovered = gameOver || !hover ? {} : hoverStyles;
     return (
-      <div className={`${styles[hoverState]} ${styles.key}`} style={hovered} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => click()}>
+      <div className={`${styles[hoverState]} ${styles.key}`}
+           style={hovered}
+           onMouseOver={this.handleHover}
+           onMouseLeave={this.handleHover}
+           onClick={() => click()}
+      >
         {letter}
       </div>
     )

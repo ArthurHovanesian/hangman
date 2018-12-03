@@ -23,16 +23,27 @@ const Lives = ({ attemptsLeft }) => {
 
   const renderLives = (lives) => {
     return (
-      <svg height='300' className={`${styles.scale}`} style={{filter: `drop-shadow(0 0 10px ${color[lives]})`}}>
-        <polyline points={polygon[lives]} stroke={color[lives]} stroke-width='2'/>
+      <svg height="300"
+           className={`${styles.scale}`}
+           style={{filter: `drop-shadow(0 0 10px ${color[lives]})`}}
+      >
+        <polyline points={polygon[lives]}
+                  stroke={color[lives]}
+                  stroke-width="2"
+        />
       </svg>
     )
   }
 
   return (
     <div className={styles.container}>
-      <svg height='300' className={`${styles.scale} ${styles.dim}`} >
-        <polyline points='300,150 225,280 75,280 0,150 75,20 225,20 300,150 0,150 75,20 225,280 75,280 225,20' stroke='#424242' stroke-width='2'/>
+      <svg height="300"
+           className={`${styles.scale} ${styles.dim}`}
+      >
+        <polyline points="300,150 225,280 75,280 0,150 75,20 225,20 300,150 0,150 75,20 225,280 75,280 225,20"
+                  stroke="#424242"
+                  stroke-width="2"
+        />
       </svg>
       {renderLives(attemptsLeft)}
     </div>

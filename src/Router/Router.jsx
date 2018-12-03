@@ -8,8 +8,12 @@ const Router = () => {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/play/:name/:difficulty" component={App} />
+          <Route exact path="/"
+                 component={Home}
+          />
+          <Route path="/play/:name/:difficulty"
+                 component={App}
+          />
         </Switch>
       </BrowserRouter>
     </div>

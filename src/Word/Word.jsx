@@ -5,7 +5,9 @@ import styles from './Word.css';
 const Word = ({ reveal }) => {
   return (
     <div className={styles.word}>
-      {reveal.map((entry, index) => <Letter entry={entry} key={index}/>)}
+      {reveal.map((entry, index) => <Letter entry={entry}
+                                            key={index}
+                                    />)}
     </div>
   )
 }

@@ -100,6 +100,7 @@ class App extends React.Component {
       })
       .catch(err => console.log(err))
       .then(() => {
+        const { word } = this.state;
         const keys = Object.assign({}, defaultKeys);
         word.forEach(letter => {
           letter = letter;
@@ -127,10 +128,13 @@ class App extends React.Component {
 
   render() {
     const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty, gameOver, leaderBoard } = this.state;
+    console.log(word)
     if (gameOver) {
       return (
         <div>
-          <LeaderBoard leaderBoard={leaderBoard} difficulty={difficulty}/>
+          <LeaderBoard leaderBoard={leaderBoard}
+                       difficulty={difficulty}
+          />
         </div>
       )
     } else if (notYetFound === -1) {
@@ -143,9 +147,15 @@ class App extends React.Component {
       return (
         <div >
           <Lives attemptsLeft={attemptsLeft} />
-          <CurrentScore score={score} name={name} difficulty={difficulty}/>
+          <CurrentScore score={score}
+                        name={name}
+                        difficulty={difficulty}
+          />
           <Word reveal={reveal}/>
-          <Keyboard keys={keys} checkUserGuess={this.checkUserGuess} attemptsLeft={attemptsLeft}/>
+          <Keyboard keys={keys}
+                    checkUserGuess={this.checkUserGuess}
+                    attemptsLeft={attemptsLeft}
+          />
         </div>
       )
     }

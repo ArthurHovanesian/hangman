@@ -125,6 +125,8 @@ Play the game at localhost:3000
 
 20. - [ ] Currently, if a player ties with the current rank 10, they will not appear on high scores list, since when I grab, it is sorted by score, then id, and then I use only the top ten. Do I like this? Would I want to show all the ties for 10th place? Or keep it as whoever was the earliest entry in that position?
 
+21. - [ ] Add more people to high score list and add a scroll that looks like it's entirely inside the frame. Like the names and scores are inset or sitting on shelves behind frame. Gotta keep the color gradient going down. Add date?
+
 
 
 ## Optimizations / Best Practices
@@ -149,7 +151,7 @@ Play the game at localhost:3000
 
 7. - [ ] Discovered a better implementation of life bar animation using componentWillUnmount. Try to refactor original solution if time.
 
-8. - [ ] I really should have tried using Redux. App.jsx is getting messy and has too many state variable to keep track of.
+8. - [ ] I really should have tried using Redux. App.jsx is getting messy and has too many state variable to keep track of and pass down. 
 
 9. - [ ] Not happy with implementation of how app know which letter to reveal. Current implementation of an array of objects might be overkill.
 

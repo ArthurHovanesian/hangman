@@ -7,7 +7,14 @@ const Keyboard = ({ keys, checkUserGuess, attemptsLeft }) => {
   const renderRow = (start, end) => {
     return Object.keys(keys)
                  .filter((key, index) => index >= start && index <= end)
-                 .map((key, index) => <Key letter={key} key={index} inWord={keys[key]} checkUserGuess={checkUserGuess} attemptsLeft={attemptsLeft}/>)
+                 .map((key, index) => (
+                    <Key letter={key}
+                         key={index}
+                         inWord={keys[key]}
+                         checkUserGuess={checkUserGuess}
+                         attemptsLeft={attemptsLeft}
+                    />
+                  ))
   }
 
   return (

@@ -37,7 +37,14 @@ class Button extends React.Component {
     const { level, handleNoName } = this.props;
     const click = handleNoName || (() => null);
     return (
-      <button className={`${styles[hoverState]} ${styles.difficulty}`} style={this.hoverStyles[hoverState]} onMouseOver = {this.handleHover} onMouseLeave={this.handleHover} onClick={() => click()}>{this.text[level]}</button>
+      <button className={`${styles[hoverState]} ${styles.difficulty}`}
+              style={this.hoverStyles[hoverState]}
+              onMouseOver = {this.handleHover}
+              onMouseLeave={this.handleHover}
+              onClick={() => click()}
+      >
+        {this.text[level]}
+      </button>
     )
   }
 
@@ -47,11 +54,11 @@ class Button extends React.Component {
       <span>
         {isHovered ? (
           <span>
-            {this.renderButton('hovered')}
+            {this.renderButton("hovered")}
           </span>
         ) : (
           <span>
-            {this.renderButton('notHovered')}
+            {this.renderButton("notHovered")}
           </span>
         )}
       </span>

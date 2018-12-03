@@ -5,10 +5,14 @@ import styles from './HighScore.css';
 const HighScore = ({ name, score, rank }) => {
   return (
     <tr className={styles.row}>
-      <td id={styles.name} className={`${styles[rank]}`}>
+      <td id={styles.name}
+          className={`${styles[rank]}`}
+      >
         {name}
       </td>
-      <td id={styles.score} className={`${styles[rank]}`}>
+      <td id={styles.score}
+          className={`${styles[rank]}`}
+      >
         {score}
       </td>
     </tr>

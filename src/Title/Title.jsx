@@ -37,17 +37,33 @@ class Title extends React.Component {
     return (
       <div className={styles.container}>
         <span className={styles.logo}>
-          <Lives attemptsLeft={logoTick + 1}/>
+          <Lives attemptsLeft={logoTick + 1} />
         </span>
-        <span className={styles.title}>
-          <span className={styles.p}>P</span>
-          <span className={styles[quickFlicker]}>A</span>
-          <span className={styles[unevenFlicker]}>S</span>
-          <span className={styles.s2}>S</span>
-          <span className={styles.c}>C</span>
-          <span className={styles[slowFlicker]}>O</span>
-          <span className={styles.d}>D</span>
-          <span className={styles.e}>E</span>
+        <span className={styles.title} >
+          <span className={styles.p}>
+            P
+          </span>
+          <span className={styles[quickFlicker]}>
+            A
+          </span>
+          <span className={styles[unevenFlicker]}>
+            S
+          </span>
+          <span className={styles.s2}>
+            S
+          </span>
+          <span className={styles.c}>
+            C
+          </span>
+          <span className={styles[slowFlicker]}>
+            O
+          </span>
+          <span className={styles.d}>
+            D
+          </span>
+          <span className={styles.e}>
+            E
+          </span>
         </span>
       </div>
     )

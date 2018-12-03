@@ -12,10 +12,18 @@ const LeaderBoard = ({ leaderBoard, difficulty }) => {
         HIGH SCORES - {difficulty.toUpperCase()}
       </div>
       <div className={styles.leaderBoard}>
-        {leaderBoard.map((entry, index) => <HighScore name={entry.name} score={entry.score} key={index} rank={`rank${index + 1}`}/>)}
+        {leaderBoard.map((entry, index) => (
+          <HighScore name={entry.name}
+                     score={entry.score}
+                     key={index}
+                     rank={`rank${index + 1}`}
+          />
+        ))}
       </div>
-      <Link to='/'>
-        <Button style={{width: '100%'}} level={3}/>
+      <Link to="/">
+        <Button style={{width: "100%"}}
+                level={3}
+        />
       </Link>
     </div>
   )
