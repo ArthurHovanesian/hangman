@@ -153,6 +153,4 @@ class App extends React.Component {
   };
 };
 
-//export up at the top?
-//proptypes
 export default App;
