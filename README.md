@@ -2,19 +2,19 @@
 
 ## Getting Started
 Make sure mysql is running
-`
+```
 mysql.server start
-`
+```
 
 Build the bundle
-`
+```
 npm run build
-`
+```
 
 Start the server
-`
+```
 npm start
-`
+```
 
 Play the game at localhost:3000
 
