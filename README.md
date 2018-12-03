@@ -104,7 +104,7 @@
 
 4. - [ ] Use AirBnB style guide and linter
 
-5. - [ ] checkUserGuess function might have too much going on / is not very clean. Hard to figure it out.
+5. - [ ] getWord checkUserGuess functions have too much going on / are not very clean. Hard to figure it out just by reading them. Separate concerns and tighten them up.
 
 6. - [x] Routing logic for virtual keypress
   - trigger handleClick function on App level to check for existence of Letter
@@ -127,3 +127,5 @@
 12. - [x] Prevent user from typing in certain characters as username
 
 13. - [ ] It's pointless to store more than 10 records in database per difficulty level if I'm only going to be grabbing the top ten. When user submits score, check against scores in database to see if current score makes it to top ten, insert it, and delete the now lowest score.
+
+14. - [ ] Conditional rendered of difficulty button at Home could be written more cleanly, possibly. Need to look more into how to use react router. 
