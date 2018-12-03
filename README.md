@@ -4,7 +4,7 @@
 1. - [x] User shouldn't be able to select letters before word is loaded in. Should not load component until after word is there.
   - Fixed: Added a loading page between rounds to prevent rendering keyboard before word is chosen.
 
-2. - [ ] Design is not responsive to different window sizes. Things need to be resized proportionally. Go back and use percent instead of pixels, or media queries, etc.
+2. - [ ] Design is not responsive to different window sizes. Things need to be resized proportionally. Go back and use percent instead of pixels, or media queries, etc. Can't deploy until this is done.
 
 3. - [x] Keyboard won't refresh after each new word is loaded in.
   - Fixed: use "key" to track score and reset after score change.
@@ -40,9 +40,13 @@
 10. - [x] How to pass props through react router <Link> tag?
   -First attempt fix: pass as url params and then use window.location.pathname. Probably not the best option but ok for now?
 
-11. - [ ] When game is over, hovering over keys makes their letters turn black. Also the whole keyboard should just be disabled or something after a loss.
+11. - [x] When game is over, hovering over keys makes their letters turn black. Also the whole keyboard should just be disabled or something after a loss.
+  -Fix: disabled ability to click after attemptsLeft reaches 0
 
 12. - [ ] Refreshing page during game shows 'cannot GET' message on blank page. Is it possible for refresh to take you back to home page instead?
+
+13. - [x] Oh my god! The flickering 'A' from the title screen persists faintly on my screen. Did that damage my computer pixels?!?!
+  - Ok it's gone
 
 
 
@@ -76,11 +80,17 @@
 
 12. - [x] Go full out with neon theme and change text to look like neon sign text, soften edges, and have effects for neon lights flickering
 
-13. - [ ] There should be some message when you lose, rather than going to the high score screen automatically.  
+13. - [x] There should be some message when you lose, rather than going to the high score screen automatically.  
+  - See below
 
-14. - [ ] Upon losing, user should be able to see the word they missed
+14. - [x] Upon losing, user should be able to see the word they missed
+  - Added a 'missed' property to reveal object and 4 second delay before going to high scores page so user can read word
 
-15. - [ ] Oh my god! The flickering A from the title screen persists faintly on my screen. Did that damage my computer screen?!?!
+15. - [ ] Speed mode that gives you 5 second per guess
+
+16. - [ ] On the left side of the screen is the word PASSCODE, all lit up. Everyone you lose a round, one of the lights goes out. After losing 8 rounds, then it's game over. This will make the game last longer than like 30 seconds. If you get two letters in a row, you get an item that lets you choose a letter to reveal.
+
+17. - [ ] Some type of two player mode where one person picks word. But kind of lame if that's all they can do.
 
 
 

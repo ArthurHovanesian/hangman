@@ -5,11 +5,19 @@ import styles from './Key.css';
 class Key extends React.Component {
   constructor(props) {
     super(props);
+    const { attemptsLeft } = this.props;
     this.handleHover = this.handleHover.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.isCorrect = this.isCorrect.bind(this);
-    this.borderColors = ['red','#ff4500','yellow','#39FF14','#00FFFF','#ff0dbf'];
-    this.textColors = ['#ffa8a8', '#ffbfa8', '#fbffaa', '#c3ffba', '#caf9f9', '#ffa0e4'];
+    this.checkForGameOver = this.checkForGameOver.bind(this);
+    this.borderColors = ['#424242', 'red','#ff4500','yellow','#39FF14','#00FFFF','#ff0dbf'];
+    this.textColors = ['#424242', '#ffa8a8', '#ffbfa8', '#fbffaa', '#c3ffba', '#caf9f9', '#ffa0e4'];
+    this.hoverStyles = {
+      boxShadow: `0px 0px 8px 2px ${this.borderColors[attemptsLeft]}, 0px 0px 8px 2px ${this.borderColors[attemptsLeft]} inset`,
+      color: `${this.textColors[attemptsLeft]}`,
+      textShadow: `0px 0px 10px ${this.borderColors[attemptsLeft]}`,
+      borderColor: 'white'
+    }
     this.state = {
       isHovered: false,
       isClicked: false,
@@ -34,10 +42,12 @@ class Key extends React.Component {
     return inWord ? 'correct' : 'incorrect';
   }
 
-  render() {
-    const { letter, checkUserGuess, attemptsLeft } = this.props;
+  checkForGameOver(gameOver) {
+    const { letter } = this.props;
     const { isHovered, isClicked } = this.state;
     const clickClass = isClicked ?  this.isCorrect() : '';
+    const hoverStyles = gameOver ? {} : this.hoverStyles;
+    const click = gameOver ? () => {} : this.handleClick;
     if (isClicked) {
       return (
         <div className={`${styles.key} ${styles[clickClass]}`} >
@@ -46,17 +56,27 @@ class Key extends React.Component {
       )
     } else if (isHovered) {
       return (
-        <div className={`${styles.hovered} ${styles.key} ${styles[clickClass]}`} style={{boxShadow: `0px 0px 8px 2px ${this.borderColors[attemptsLeft - 1]}, 0px 0px 8px 2px ${this.borderColors[attemptsLeft - 1]} inset`, color: `${this.textColors[attemptsLeft - 1]}`, textShadow: `0px 0px 10px ${this.borderColors[attemptsLeft - 1]}`}} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
+        <div className={`${styles.hovered} ${styles.key}`} style={hoverStyles} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => click()}>
           {letter}
         </div>
       )
     } else {
       return (
-        <div className={`${styles.notHovered} ${styles.key} ${styles[clickClass]}`} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={() => this.handleClick()}>
+        <div className={`${styles.notHovered} ${styles.key}`} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} >
           {letter}
         </div>
       )
     }
+  }
+
+  render() {
+    const { attemptsLeft } = this.props;
+    if (attemptsLeft === 0) {
+      return this.checkForGameOver(true)
+    } else {
+      return this.checkForGameOver(false)
+    }
+
   }
 }
 

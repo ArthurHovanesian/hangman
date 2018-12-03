@@ -6,14 +6,12 @@
   font-family: 'Roboto', sans-serif;
   font-size: 80px;
   margin: 5px;
-  border: 1px solid #D3D3D3;
+  color: #424242;
+  border: 1px solid #424242;
   border-radius: 5px;
 }
 
 .notHovered {
-  background-color: black;
-  color: #424242;
-  border-color: #424242;
   transform: scale(1);
   transition: color .7s ease, box-shadow .5s ease, text-shadow .7s ease, transform .2s ease;
 }

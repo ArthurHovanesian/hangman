@@ -87,9 +87,6 @@ class App extends React.Component {
   }
 
   getWord() {
-    //err handling
-    //condense into one .then?
-    //this is very messy
     const difficulty = this.getNameAndDifficulty()[1];
     axios.get(`/api/choose_word/${difficulty}`, {difficulty: difficulty})
       .then(res => {
@@ -114,7 +111,6 @@ class App extends React.Component {
   }
 
   checkUserGuess(query) {
-    //there's a lot going on here
     const { word, reveal, attemptsLeft, notYetFound } = this.state;
     let numAttempts = attemptsLeft;
     let lettersFound = word.filter(letter => letter === query);
@@ -132,7 +128,7 @@ class App extends React.Component {
 
   render() {
     const { word, reveal, keys, attemptsLeft, notYetFound, score, name, difficulty, gameOver, leaderBoard } = this.state;
-    console.log('word', word, 'attempts', attemptsLeft, 'score', score, 'notfound', notYetFound)
+    console.log(word)
     if (gameOver) {
       return (
         <div>
